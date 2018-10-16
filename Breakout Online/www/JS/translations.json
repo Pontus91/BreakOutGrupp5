@@ -1,0 +1,25 @@
+{
+    "sv": [
+        {
+            "text": "Breakout är ett arkadspel utvecklat av Atari. Spelet går ur på att förstöra blocken vid toppen av skärmen. För att göra det har spelaren en boll som studsar runt på spelplanen. På botten av skärmen har spelaren en paddel som de styr för att studsa upp bollen. Om bollen rör vid botten av skärmen så förlorar spelaren ett liv. Spelaren har tre liv på sig att eliminera två uppsättningar av block. Bollens hastighet ökar vid specifika intervaller. Den högsta möjliga poängen för en spelare är 896."
+        },
+        {
+            "text": "Konceptet är baserat på Pong och togs fram av Nolan Bushnell och Steve Bristow. Breakout var baserat på samma hårdvara som Pong och skapades med syfte att konkurrera ut företag som gjorde Pong-kloner. Bushnell ville göra Pong till ett singleplayer-spel och var övertygad om att spelet skulle bli en succé. Spelet utvecklades sedan av Steve Wozniak och Steve Jobs som byggde den första prototypen. Men Atari kunde inte använda Wozniaks prototyp. Wozniaks fokus på att bygga prototypen med så få chip som möjligt gjorde den svår att tillverka, den var för kompakt och komplicerad för att fungera med Ataris tillverkningsmetoder."
+        },
+        {
+            "text": "Många portar och varianter på Breakout har skapats genom åren, till exempel Super Breakout och Arkanoid. Breakout influerade även Wozniak när han senare designade Apple II-datorn, detta ledde till inkluderandet av färggrafikskretsar, stöd för paddel och ljud, samt grafikkommandon i Integer BASIC vilket Wozniak sedan använde för att skapa en mjukvaruklon av Breakout vid namn Brick Out."
+        }
+    ],
+
+    "en": [
+        {
+            "text": "Breakout is an arcade game created by Atari. The goal of the game is to destroy the blocks at the top of the screen. To do this the player has a ball that bounces around the playing field. At the bottom of the screen the player has paddle that they control to bounce the ball back up. If the ball touches the bottom of the screen the player loses a life. The player has three lives at their disposal to eliminate two sets of blocks. The speed of the ball increases at specific intervals. The highest possible score for a single player is 896."
+        },
+        {
+            "text": ""
+        },
+        {
+            "text": ""
+        }
+    ]
+}
