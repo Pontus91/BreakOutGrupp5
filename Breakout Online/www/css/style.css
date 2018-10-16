@@ -9609,12 +9609,5 @@ a.text-dark:hover, a.text-dark:focus {
 }
 body {
   background-color: white;
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
 }
-main {
-  flex:1;
-}
-
 /*# sourceMappingURL=style.css.map */
