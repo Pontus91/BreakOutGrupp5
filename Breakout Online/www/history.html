@@ -1,29 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
-  <title>Historia</title>
+  <title>History</title>
 </head>
-
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav mx-auto">
-          <a class="nav-item nav-link" href="index.html">Startsida <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link active" href="history.html">Historia</a>
-          <a class="nav-item nav-link" href="#">Breakout Online</a>
-          <a class="nav-item nav-link" href="#">Rekord</a>
-        </div>
-      </div>
-    </nav>
-  </header>
 
   <main class="container">
     <!-- Added margin top and centered the image and text in accordance
@@ -31,7 +13,14 @@
     <section class="row mt-5 justify-content-center">
       <!-- The (md) used in column class will make the size of the element span 6 columns for all screen sizes above medium. Screensizes lower then that will have full width.-->
       <article class="col-md-6">
-        <p>Breakout är ett arkadspel utvecklat av Atari. 
+        <p>Breakout är ett arkadspel utvecklat av Atari.
+          Spelet går ur på att förstöra blocken vid toppen av skärmen.
+          För att göra det har spelaren en boll som studsar runt på spelplanen.
+          På botten av skärmen har spelaren en paddel som de styr för att studsa upp bollen.
+          Om bollen rör vid botten av skärmen så förlorar spelaren ett liv.
+          Spelaren har tre liv på sig att eliminera två uppsättningar av block.
+          Bollens hastighet ökar vid specifika intervaller.
+          Den högsta möjliga poängen för en spelare är 896.</p>
       </article>
       <figure class="col-md-4">
         <!-- img-fluid will make the image take the full width within the element it is placed in, in this case the <figure> element.-->
@@ -45,22 +34,16 @@
         <img class="img-fluid" src="http://via.placeholder.com/300x300" alt="" >
       </figure>
       <article class="col-md-6">
-        <p>Konceptet är baserat på Pong och togs fram av Nolan Bushnell och Steve Bristow. 
+        <p>Konceptet är baserat på Pong och togs fram av Nolan Bushnell och Steve Bristow.
+          Breakout var baserat på samma hårdvara som Pong och skapades med syfte att konkurrera
+          ut företag som gjorde Pong-kloner. Bushnell ville göra Pong till ett singleplayer-spel
+          och var övertygad om att spelet skulle bli en succé. Spelet utvecklades sedan av Steve
+          Wozniak och Steve Jobs som byggde den första prototypen. Men Atari kunde inte använda Wozniaks prototyp.
+          Wozniaks fokus på att bygga prototypen med så få chip som möjligt gjorde den svår att tillverka, den var för
+          kompakt och komplicerad för att fungera med Ataris tillverkningsmetoder.</p>
       </article>
-    </section>
-    <section class="row justify-content-center mt-5">
-      <article class="col-5">
-        <p>Många portar och varianter på Breakout har skapats genom åren, till exempel Super Breakout och Arkanoid. 
-          Breakout influerade även Wozniak när han senare designade Apple II-datorn, detta ledde till inkluderandet 
-          av färggrafikskretsar, stöd för paddel och ljud, samt grafikkommandon i Integer BASIC vilket Wozniak sedan 
-          använde för att skapa en mjukvaruklon av Breakout vid namn Brick Out. </p>
-      </article>
-      <figure class="col-3">
-        <img src="http://via.placeholder.com/250x216" alt="">
-      </figure>
     </section>
   </main>
   <script src="/js/main.js"></script>
 </body>
-
 </html>
