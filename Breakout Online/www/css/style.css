@@ -9610,4 +9610,8 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   background-color: white;
 }
+
+.navbar {
+  background-color: black;
+}
 /*# sourceMappingURL=style.css.map */
