@@ -16,7 +16,7 @@
             "text": "Breakout is an arcade game created by Atari. The goal of the game is to destroy the blocks at the top of the screen. To do this the player has a ball that bounces around the playing field. At the bottom of the screen the player has paddle that they control to bounce the ball back up. If the ball touches the bottom of the screen the player loses a life. The player has three lives at their disposal to eliminate two sets of blocks. The speed of the ball increases at specific intervals. The highest possible score for a single player is 896."
         },
         {
-            "text": ""
+            "text": "The concept is based on Pong and was developed by Nolan Bushnell and Steve Bristow. Breakout was based on the same hardware as Pong and was created with the purpose of competing with companies making Pong clones. Bushnell wanted to make Pong into a singleplayer game and was convinced it would be a success. Steve Jobs and Steve Wozniak were then assigned to making the first prototype. But Atari were unable to use Wozniaks prototype. Wozniaks focus on making the prototype with as few chips as possible made it hard to manufacture. It was too compact and too complex for Atari’s manufacturing methods."
         },
         {
             "text": ""
