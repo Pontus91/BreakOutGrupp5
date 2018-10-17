@@ -9616,9 +9616,10 @@ body {
 }
 .navbar .logo {
   position: absolute;
-  left: 50%;
-  margin-left: -50px !important;
+  left: calc(50% - 50px);
+  margin: 0 auto;
   display: block;
+  top: 8px;
 }
 
 body {
@@ -9638,5 +9639,4 @@ main {
       -ms-flex: 1;
           flex: 1;
 }
-
 /*# sourceMappingURL=style.css.map */
