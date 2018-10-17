@@ -1,4 +1,6 @@
+//used to position the text when printing
 let index = 1;
+//used to set the language between swedish and english
 let langSwe = true;
 
 function start(translations) {
@@ -9,6 +11,7 @@ function start(translations) {
     // (here we create an ul-element
     // as a jQuery objekt)
 
+    //prints swedish translation
     if (langSwe) {
         for (let transl of translations.sv) {
             // append - add something
@@ -18,6 +21,7 @@ function start(translations) {
         }
     }
 
+    //prints english translation
     if (!langSwe) {
         for (let transl of translations.en) {
             // append - add something
