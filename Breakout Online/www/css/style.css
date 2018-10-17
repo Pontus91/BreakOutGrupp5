@@ -9622,6 +9622,16 @@ body {
   top: 8px;
 }
 
+.flagDesign {
+  opacity: 0.5;
+  cursor: pointer;
+  max-height: 18px;
+  max-width: 18px;
+}
+.flagDesign .flagDesign:hover {
+  opacity: 1;
+}
+
 body {
   background-color: #636060;
   display: -webkit-box;
