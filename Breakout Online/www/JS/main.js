@@ -36,6 +36,20 @@ function start(translations) {
     // chore descriptions
 }
 
+//click functionality for changing language
+//on click changes the flag shown and sets the language to what it isn't right now
+$('.flag').click(function () {
+    if (langSwe) {
+      $('.britFlag').hide();
+      $('.sweFlag').show();
+    }
+    else if (!langSwe) {
+      $('.sweFlag').hide();
+      $('.britFlag').show();
+    }
+    langSwe = !langSwe;
+  });
+
 // Ask jQuery to load some json data
 // from a url-path and then run the function start
 $.getJSON('/js/translations.json', start);
