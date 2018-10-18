@@ -1,32 +1,4 @@
 {
-    "navsv": [
-        {
-            "nav": "Startsida"
-        },
-        {
-            "nav": "Historia"
-        },
-        {
-            "nav": "Breakout Online"
-        },
-        {
-            "nav": "Rekord"
-        }
-    ],
-    "naven": [
-        {
-            "nav": "Front page"
-        },
-        {
-            "nav": "History"
-        },
-        {
-            "nav": "Breakout Online"
-        },
-        {
-            "nav": "Highscore"
-        }
-    ],
     "footerSv": [
         {
             "title": "Arcade game",

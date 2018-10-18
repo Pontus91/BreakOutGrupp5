@@ -1,0 +1,30 @@
+{
+    "navsv": [
+        {
+            "nav": "Startsida"
+        },
+        {
+            "nav": "Historia"
+        },
+        {
+            "nav": "Breakout Online"
+        },
+        {
+            "nav": "Rekord"
+        }
+    ],
+    "naven": [
+        {
+            "nav": "Front page"
+        },
+        {
+            "nav": "history"
+        },
+        {
+            "nav": "Breakout Online"
+        },
+        {
+            "nav": "Highscore"
+        }
+    ]
+}
