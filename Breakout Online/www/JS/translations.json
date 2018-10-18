@@ -18,15 +18,7 @@
             "nav": "Front page"
         },
         {
-<<<<<<< Updated upstream
-            "nav": "history"
-=======
-<<<<<<< HEAD
             "nav": "History"
-=======
-            "nav": "history"
->>>>>>> parent of a031321... Merge remote-tracking branch 'origin/master'
->>>>>>> Stashed changes
         },
         {
             "nav": "Breakout Online"
