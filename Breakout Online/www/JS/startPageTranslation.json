@@ -1,0 +1,36 @@
+{
+  "sv": [
+      {
+        "card-title": "Google",
+        "card-text": "Startsida",
+        "card-button": "Spela"
+      },
+      {
+        "card-title": "Outer Space",
+        "card-text": "Startsida",
+        "card-button": "Spela"
+      },
+      {
+        "card-title": "BrickOut",
+        "card-text": "Startsida",
+        "card-button": "Spela"
+      }
+  ],
+  "en": [
+      {
+        "card-title": "Google",
+        "card-text": "Hidden Google Easter Egg turns Google Images into Atari Breakout.",
+        "card-button": "Play"
+      },
+      {
+        "card-title": "Outer Space",
+        "card-text": "Shoot all bricks with the ball and keep the ball in play with your paddle.",
+        "card-button": "Play"
+      },
+      {
+        "card-title": "BrickOut",
+        "card-text": "Be sure to collect the random power ups to help you survive.",
+        "card-button": "Play"
+      }
+  ]
+}
