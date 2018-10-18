@@ -9672,4 +9672,33 @@ main {
           flex: 1;
 }
 
+.zoom {
+  display: inline-block;
+  border: 0;
+  width: 350px;
+  height: 210px;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 200ms ease-in;
+  transform: scale(1);
+}
+
+.zoom:hover {
+  -webkit-box-shadow: 0px 0px 150px #000000;
+          box-shadow: 0px 0px 150px #000000;
+  z-index: 2;
+  -webkit-transition: all 200ms ease-in;
+  -webkit-transform: scale(1.5);
+  -ms-transition: all 200ms ease-in;
+  -ms-transform: scale(1.5);
+  -moz-transition: all 200ms ease-in;
+  -moz-transform: scale(1.5);
+  transition: all 200ms ease-in;
+  -webkit-transform: scale(1.8);
+          transform: scale(1.8);
+}
 /*# sourceMappingURL=style.css.map */
