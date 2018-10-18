@@ -7,3 +7,10 @@ const app = express();
 app.use(express.static('www'));
 // Start the web server on port 3000
 app.listen(3000,() => console.log('Listening on port 3000'));
+
+// Serve the index page everywhere so that the
+// frontend router can decide what to do
+const path = require('path');
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './www/index.html'));
+});
