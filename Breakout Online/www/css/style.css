@@ -9638,6 +9638,10 @@ body {
   right: 30px;
 }
 
+.sweFlag {
+  display: none;
+}
+
 body {
   background-color: #636060;
   display: -webkit-box;
@@ -9655,4 +9659,5 @@ main {
       -ms-flex: 1;
           flex: 1;
 }
+
 /*# sourceMappingURL=style.css.map */
