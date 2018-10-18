@@ -9632,6 +9632,12 @@ body {
   opacity: 1;
 }
 
+.flagPlacement {
+  position: absolute;
+  top: 17px;
+  right: 30px;
+}
+
 body {
   background-color: #636060;
   display: -webkit-box;
@@ -9649,5 +9655,4 @@ main {
       -ms-flex: 1;
           flex: 1;
 }
-
 /*# sourceMappingURL=style.css.map */
