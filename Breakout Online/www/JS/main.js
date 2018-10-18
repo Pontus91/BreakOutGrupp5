@@ -4,6 +4,11 @@ let index = 1;
 let langSwe = true;
 
 function start(translations) {
+
+    let inSwe = 1;
+    let inEng = 1;
+    let ulSwe = $('<ul/>');
+  let ulEng = $('<ul/>');
     console.log('Now we have JSON');
     // please note when
     // writing tags with jQuery
@@ -12,23 +17,23 @@ function start(translations) {
     // as a jQuery objekt)
 
     //prints swedish translation
-    if (langSwe) {
         for (let transl of translations.sv) {
+            let pSwe = $('<p/>');
             // append - add something
             // last inside me
-            $('.test' + index).append(transl.text);
-            index++;
+            pSwe.append(transl.text);
+            $('.testSwe' + inSwe).append(pSwe);
+            inSwe++;
         }
-    }
 
     //prints english translation
-    if (!langSwe) {
-        for (let transl of translations.en) {
-            // append - add something
-            // last inside me
-            $('.test' + index).append(transl.text);
-            index++;
-        }
+    for (let transl of translations.en) {
+        let pEng = $('<p/>');
+        // append - add something
+        // last inside me
+        pEng.append(transl.text);
+        $('.testEng' + inEng).append(pEng);
+        inEng++;
     }
     // jQuery grab the body element
     // and append the ul inside it
@@ -38,17 +43,31 @@ function start(translations) {
 
 //click functionality for changing language
 //on click changes the flag shown and sets the language to what it isn't right now
+let langSwitch = false;
+
 $('.flag').click(function () {
-    if (langSwe) {
-      $('.britFlag').hide();
-      $('.sweFlag').show();
-    }
-    else if (!langSwe) {
-      $('.sweFlag').hide();
-      $('.britFlag').show();
-    }
-    langSwe = !langSwe;
-  });
+  if (!langSwitch) {
+    $('.testSwe1').hide();
+    $('.testEng1').show();
+    $('.testSwe2').hide();
+    $('.testEng2').show();
+    $('.testSwe3').hide();
+    $('.testEng3').show();
+    $('.britFlag').hide();
+    $('.sweFlag').show();
+  }
+  else if (langSwitch) {
+    $('.testEng1').hide();
+    $('.testSwe1').show();
+    $('.testEng2').hide();
+    $('.testSwe2').show();
+    $('.testEng3').hide();
+    $('.testSwe3').show();
+    $('.sweFlag').hide();
+    $('.britFlag').show();
+  }
+  langSwitch = !langSwitch;
+});
 
 // Ask jQuery to load some json data
 // from a url-path and then run the function start
