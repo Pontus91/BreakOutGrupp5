@@ -78,12 +78,13 @@ console.log('No JSON yet');
   // When the JSON has loaded we will see
   // the console.log inisde the function start
 
+  
 
   $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.naven, function() {
             $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-            $('a').addClass('test123');
+            $('.navbar-nav a').addClass('test123');
             $('.test123').remove();
         })
     })
@@ -93,7 +94,7 @@ $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.navsv, function() {
             $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-            $('a').addClass('test321');
+            $('.navbar-nav a').addClass('test321');
         })
     })
 })
@@ -104,7 +105,7 @@ $('.britFlag').click(function(){
         $.getJSON('/js/navbartranslation.json', function(data) {
             $.each(data.naven, function() {
                 $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-                $('a').addClass('test123');
+                $('.navbar-nav a').addClass('test123');
                 $('.test321').remove();
             })
         })
@@ -117,11 +118,9 @@ $('.sweFlag').click(function(){
         $.getJSON('/js/navbartranslation.json', function(data) {
             $.each(data.navsv, function() {
                 $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-                $('a').addClass('test321');
+                $('.navbar-nav a').addClass('test321');
                 $('.test123').remove();
             })
         })
     })
 })
-
-
