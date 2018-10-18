@@ -77,3 +77,22 @@ $.getJSON('/js/translations.json', start);
 console.log('No JSON yet');
   // When the JSON has loaded we will see
   // the console.log inisde the function start
+
+$(document).ready(function() {
+    $.getJSON('/js/navbartranslation.json', function(data) {
+        $.each(data.navsv, function() {
+            $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+        })
+    })
+})
+
+$(document).ready(function() {
+    $.getJSON('/js/navbartranslation.json', function(data) {
+        $.each(data.naven, function() {
+            $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+        })
+    })
+})
+
+
+

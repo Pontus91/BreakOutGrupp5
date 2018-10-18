@@ -1,30 +1,39 @@
 {
     "navsv": [
         {
-            "nav": "Startsida"
+            "nav": "Startsida",
+            "href": "/"
         },
         {
-            "nav": "Historia"
+            "nav": "Historia",
+            "href": "/history"
         },
         {
-            "nav": "Breakout Online"
+            "nav": "Breakout Online",
+            "href": "/breakout-online"
         },
         {
-            "nav": "Rekord"
+            "nav": "Rekord",
+            "href": "/high-score"
         }
     ],
     "naven": [
         {
-            "nav": "Front page"
+            "nav": "Front page",
+            "href": "/"
         },
         {
-            "nav": "history"
+            "nav": "History",
+            "href": "/history"
         },
         {
-            "nav": "Breakout Online"
+            "nav": "Breakout Online",
+            "href": "/breakout-online"
+            
         },
         {
-            "nav": "Highscore"
+            "nav": "Highscore",
+            "href": "/high-score"
         }
     ]
 }
