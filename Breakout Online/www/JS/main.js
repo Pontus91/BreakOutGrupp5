@@ -79,36 +79,49 @@ console.log('No JSON yet');
   // the console.log inisde the function start
 
 
+  $(document).ready(function() {
+    $.getJSON('/js/navbartranslation.json', function(data) {
+        $.each(data.naven, function() {
+            $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+            $('a').addClass('test123');
+            $('.test123').remove();
+        })
+    })
+})
+
 $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.navsv, function() {
             $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+            $('a').addClass('test321');
         })
     })
 })
 
-
-$(document).ready(function() {
-    $.getJSON('/js/navbartranslation.json', function(data) {
-        $.each(data.naven, function() {
-            $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-        })
-    })
-})
-
-
-/*
 
 $('.britFlag').click(function(){
     $(document).ready(function() {
         $.getJSON('/js/navbartranslation.json', function(data) {
             $.each(data.naven, function() {
                 $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+                $('a').addClass('test123');
+                $('.test321').remove();
             })
         })
     })
 
-    $().remove();
 })
 
-*/
+$('.sweFlag').click(function(){
+    $(document).ready(function() {
+        $.getJSON('/js/navbartranslation.json', function(data) {
+            $.each(data.navsv, function() {
+                $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+                $('a').addClass('test321');
+                $('.test123').remove();
+            })
+        })
+    })
+})
+
+
