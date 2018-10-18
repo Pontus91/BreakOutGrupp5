@@ -78,6 +78,7 @@ console.log('No JSON yet');
   // When the JSON has loaded we will see
   // the console.log inisde the function start
 
+
 $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.navsv, function() {
@@ -85,6 +86,7 @@ $(document).ready(function() {
         })
     })
 })
+
 
 $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
@@ -95,4 +97,18 @@ $(document).ready(function() {
 })
 
 
+/*
 
+$('.britFlag').click(function(){
+    $(document).ready(function() {
+        $.getJSON('/js/navbartranslation.json', function(data) {
+            $.each(data.naven, function() {
+                $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
+            })
+        })
+    })
+
+    $().remove();
+})
+
+*/
