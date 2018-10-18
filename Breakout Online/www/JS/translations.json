@@ -15,7 +15,7 @@
     ],
     "naven": [
         {
-            "nav": "Start"
+            "nav": "Front page"
         },
         {
             "nav": "history"
@@ -24,7 +24,7 @@
             "nav": "Breakout Online"
         },
         {
-            "nav": "High score"
+            "nav": "Highscore"
         }
     ],
     "sv": [
