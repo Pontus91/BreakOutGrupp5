@@ -9638,6 +9638,10 @@ body {
   right: 30px;
 }
 
+.sweFlag {
+  display: none;
+}
+
 body {
   background-color: #636060;
   display: -webkit-box;
