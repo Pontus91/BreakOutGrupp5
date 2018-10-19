@@ -1,6 +1,6 @@
 .zoom
 {
-  //  position: absolute;
+    position: absolute;
     width:350px;
     height:210px;
     -webkit-transition: all 200ms ease-in;
@@ -17,7 +17,7 @@
 }
 .zoom.active
 {
-   // position: relative;
+    position: relative;
     box-shadow: 0px 0px 150px #000000;
     z-index: 2;
     -webkit-transition: all 200ms ease-in;
