@@ -1,0 +1,39 @@
+{
+    "frontCardSv": [
+        {   
+            "firstSweCardText": "Gömda Google påskägg förvandlar Google Bilder till Atari Breakout spel.",
+            "firstButtonSweText": "Spela"
+        }
+    ],
+    
+    "secondCardSv": [
+        {
+            "secondSweCardText":"Skjut ner alla tegelstenar med bollen och håll bollen i spel med din paddel."
+        }
+    ],
+
+    "thirdCardSv": [
+        {
+            "thirdSweCardText":"Var säker med att samla de slumpmässiga power ups för att hjälpa dig överleva."
+        }
+    ],
+
+    "frontCardEng": [
+        {   
+            "firstEngCardText": "Hidden Google Easter Eggs turns Google photos into the Atari Breakout game.",
+            "firstButtonEngText": "Play"
+        }
+    ],
+    
+    "secondCardEng": [
+        {
+            "secondEngCardText":"Shoot down all the bricks with the ball and hold the ball in play with your paddle."
+        }
+    ],
+
+    "thirdCardEng": [
+        {
+            "thirdEngCardText":"Be sure to collect the random power ups it will help you survive."
+        }
+    ]
+}

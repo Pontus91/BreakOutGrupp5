@@ -84,8 +84,8 @@ console.log('No JSON yet');
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.naven, function() {
             $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-            $('.navbar-nav a').addClass('test123');
-            $('.test123').remove();
+            $('.navbar-nav a').addClass('NavEngLang');
+            $('.NavEngLang').remove();
         })
     })
 })
@@ -94,7 +94,7 @@ $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.navsv, function() {
             $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-            $('.navbar-nav a').addClass('test321');
+            $('.navbar-nav a').addClass('NavSweLang');
         })
     })
 })
@@ -105,8 +105,8 @@ $('.britFlag').click(function(){
         $.getJSON('/js/navbartranslation.json', function(data) {
             $.each(data.naven, function() {
                 $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-                $('.navbar-nav a').addClass('test123');
-                $('.test321').remove();
+                $('.navbar-nav a').addClass('NavEngLang');
+                $('.NavSweLang').remove();
             })
         })
     })
@@ -118,8 +118,8 @@ $('.sweFlag').click(function(){
         $.getJSON('/js/navbartranslation.json', function(data) {
             $.each(data.navsv, function() {
                 $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-                $('.navbar-nav a').addClass('test321');
-                $('.test123').remove();
+                $('.navbar-nav a').addClass('NavSweLang');
+                $('.NavEngLang').remove();
             })
         })
     })
