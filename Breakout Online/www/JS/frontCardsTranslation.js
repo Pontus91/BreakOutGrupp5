@@ -90,32 +90,32 @@ $('.sweFlag').click(function() {
 $(document).ready(function() {
     $.getJSON('/js/frontCardsTranslation.json', function(data) {
         $.each(data.frontCardEng, function() {
-            $('.firstEngCard').append("<p>"+this['firstEngCardText']+"</p");
+            $('.firstEngCard').append("<p>"+this['firstEngCardText']+"</p>");
             $('.btn-primary').append("<p>"+this['firstButtonEngText']+"</p>");
             $('.firstEngCard p').addClass('cardEngSampleText');
             $('.btn-primary p').addClass('buttonEngSampleText');
             
         })
         $.each(data.secondCardEng, function() {
-            $('.secondEngCard').append("<p>"+this['secondEngCardText']+"</p");
+            $('.secondEngCard').append("<p>"+this['secondEngCardText']+"</p>");
             $('.secondEngCard p').addClass('cardEngSampleText');
         }) 
         $.each(data.thirdCardEng, function() {
-            $('.thirdEngCard').append("<p>"+this['thirdEngCardText']+"</p");
+            $('.thirdEngCard').append("<p>"+this['thirdEngCardText']+"</p>");
             $('.thirdEngCard p').addClass('cardEngSampleText');
         })
         $.each(data.frontCardSv, function() {
-            $('.firstCard').append("<p>"+this['firstSweCardText']+"</p");
+            $('.firstCard').append("<p>"+this['firstSweCardText']+"</p>");
             $('.btn-primary').append("<p>"+this['firstButtonSweText']+"</p>");
             $('.firstCard p').addClass('cardSweSampleText');
             $('.btn-primary p').addClass('buttonSweSampleText');
         })
         $.each(data.secondCardSv, function() {
-            $('.secondCard').append("<p>"+this['secondSweCardText']+"</p");
+            $('.secondCard').append("<p>"+this['secondSweCardText']+"</p>");
             $('.secondCard p').addClass('cardSweSampleText');
         }) 
         $.each(data.thirdCardSv, function() {
-            $('.thirdCard').append("<p>"+this['thirdSweCardText']+"</p");
+            $('.thirdCard').append("<p>"+this['thirdSweCardText']+"</p>");
             $('.thirdCard p').addClass('cardSweSampleText');
         })
         $('.cardEngSampleText').hide();
