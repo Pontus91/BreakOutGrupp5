@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9609,6 +9610,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 body {
   background-color: white;
+  font-family: 'Press Start 2P', cursive;
+  background-image: url(http://img4.wikia.nocookie.net/__cb20120730200249/ipod/images/6/65/Earth_and_Moon.jpg);
+  background-size: cover;
 }
 
 .testEng1 {
@@ -9659,8 +9663,11 @@ a {
   margin-left: 10px;
 }
 
+.bg-light {
+  background-color: #c7c7c7;
+}
+
 body {
-  background-color: #636060;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
