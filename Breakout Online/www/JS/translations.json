@@ -1,32 +1,4 @@
 {
-    "footerSv": [
-        {
-            "title": "Arcade game",
-            "text": "Breakout game"
-        },
-        {
-            "title": "Kontakt",
-            "text": "Tel 420 65 98"
-        },
-        {
-            "title": "E-post",
-            "text": "info@breakoutgame.se"
-        }
-    ],
-    "footerEn": [
-        {
-            "title": "Arcade game",
-            "text": "Breakout game"
-        },
-        {
-            "title": "Contact",
-            "text": "Tel 420 65 98"
-        },
-        {
-            "title": "Email",
-            "text": "info@breakoutgame.se"
-        }
-    ],
     "sv": [
         {
             "text": "Breakout är ett arkadspel utvecklat av Atari. Spelet går ur på att förstöra blocken vid toppen av skärmen. För att göra det har spelaren en boll som studsar runt på spelplanen. På botten av skärmen har spelaren en paddel som de styr för att studsa upp bollen. Om bollen rör vid botten av skärmen så förlorar spelaren ett liv. Spelaren har tre liv på sig att eliminera två uppsättningar av block. Bollens hastighet ökar vid specifika intervaller. Den högsta möjliga poängen för en spelare är 896."

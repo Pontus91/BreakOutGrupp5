@@ -9640,7 +9640,7 @@ body {
   max-height: 18px;
   max-width: 18px;
 }
-.flagDesign .flagDesign:hover {
+.flagDesign:hover {
   opacity: 1;
 }
 
