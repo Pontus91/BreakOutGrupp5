@@ -9611,6 +9611,8 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   background-color: white;
   font-family: 'Press Start 2P', cursive;
+  background-image: url(http://img4.wikia.nocookie.net/__cb20120730200249/ipod/images/6/65/Earth_and_Moon.jpg);
+  background-size: cover;
 }
 
 .testEng1 {
@@ -9661,8 +9663,11 @@ a {
   margin-left: 10px;
 }
 
+.bg-light {
+  background-color: #c7c7c7;
+}
+
 body {
-  background-color: #636060;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9710,5 +9715,4 @@ main {
   transition: all 200ms ease-in;
   transform: scale(1.8);
 }
-
 /*# sourceMappingURL=style.css.map */
