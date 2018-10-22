@@ -35,5 +35,17 @@
         {
             "thirdEngCardText":"Be sure to collect the random power ups it will help you survive."
         }
+    ],
+
+    "headlinerSweText": [
+        {
+            "headlinerSwe": "En hemsida dedikerad till det klassiska arkadspelet Breakout"
+        }
+    ],
+
+    "headlinerEngText": [
+        {
+            "headlinerEng": "A website dedicated to the classic arcadegame Breakout"
+        }
     ]
 }

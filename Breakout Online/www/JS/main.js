@@ -124,3 +124,35 @@ $('.sweFlag').click(function(){
         })
     })
 })
+
+$(document).ready(function() {
+    $.getJSON('/js/frontCardsTranslation.json', function(data) {
+        $.each(data.headlinerEngText, function() {
+            $('.headlineSummary').append("<p>"+this['headlinerEng']+"</p>");
+            $('.headlineSummary p').addClass('textClassEng');
+            $('.textClassEng').hide();
+        })
+    })
+})
+
+$(document).ready(function() {
+    $.getJSON('/js/frontCardsTranslation.json', function(data) {
+        $.each(data.headlinerSweText, function() {
+            $('.headlineSummary').append("<p>"+this['headlinerSwe']+"</p>");
+            $('.headlineSummary p').addClass('textClassSwe');
+        })
+    })
+})
+
+$('.britFlag').click(function() {
+    $('.textClassSwe').hide()
+    $('.textClassEng').show()
+})
+
+$('.sweFlag').click(function () {
+    $('.textClassEng').hide()
+    $('.textClassSwe').show()
+    $('.textClassEng').hide()
+    
+})
+
