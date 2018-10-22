@@ -9629,6 +9629,9 @@ body {
 
 .navbar {
   position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 1px 1px blue;
+          box-shadow: 1px 1px 1px 1px blue;
 }
 .navbar .logo {
   position: absolute;
@@ -9682,6 +9685,10 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .zoom {

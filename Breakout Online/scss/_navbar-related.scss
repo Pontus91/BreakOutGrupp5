@@ -1,5 +1,7 @@
 .navbar {
     position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px 1px blue;
 
     .logo {
         position: absolute;
@@ -16,7 +18,7 @@
     opacity: 0.5;
     cursor: pointer;
     max-height: 18px;
-      max-width: 18px;
+    max-width: 18px;
 
     &:hover {
         opacity: 1;
