@@ -4,7 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9610,7 +9610,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 body {
   background-color: white;
-  font-family: 'Press Start 2P', cursive;
+  font-family: 'Orbitron', sans-serif;
   background-image: url(http://img4.wikia.nocookie.net/__cb20120730200249/ipod/images/6/65/Earth_and_Moon.jpg);
   background-size: cover;
 }
@@ -9715,4 +9715,5 @@ main {
   transition: all 200ms ease-in;
   transform: scale(1.8);
 }
+
 /*# sourceMappingURL=style.css.map */
