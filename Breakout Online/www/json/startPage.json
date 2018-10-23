@@ -1,0 +1,56 @@
+{
+  "title": {
+    "sv": [
+      {
+        "text": "En hemsida dedikerad till det klassiska arkadspelet Breakout"
+      }
+    ],
+    "en": [
+      {
+        "text": "A website dedicated to the classic arcadegame Breakout"
+      }
+    ]
+  },
+  "cards": {
+    "sv": [ 
+      {
+        "name": "firstCard",
+        "text": "Gömda Google påskägg förvandlar Google Bilder till Atari Breakout spel."
+      },
+      {
+        "name": "secondCard",
+        "text": "Skjut ner alla tegelstenar med bollen och håll bollen i spel med din paddel."
+      },
+      {
+        "name": "thirdCard",
+        "text": "Var säker med att samla de slumpmässiga power ups för att hjälpa dig överleva."
+      }
+    ],
+    "en": [
+      {
+        "name": "firstCard",
+        "text": "Hidden Google Easter Eggs turns Google photos into the Atari Breakout game."
+      },
+      {
+        "name": "secondCard",
+        "text": "Shoot down all the bricks with the ball and hold the ball in play with your paddle."
+      },
+      {
+        "name": "thirdCard",
+        "text": "Be sure to collect the random power ups it will help you survive during the game."
+      }
+    ]
+  },
+  "buttons": {
+    "sv": [
+      {
+        "text": "Spela"
+      }
+    ],
+    "en": [
+      {
+        "text": "Play"
+      }
+    ]
+  }
+}
