@@ -169,4 +169,3 @@ $('.sweFlag').click(function () {
     $('.textClassEng').hide()
     
 })
-*/
