@@ -79,7 +79,7 @@ console.log('No JSON yet');
   // the console.log inisde the function start
 
   
-
+//adds the english translation to the navbar
   $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.naven, function() {
@@ -90,6 +90,7 @@ console.log('No JSON yet');
     })
 })
 
+//Adds the swedish translation to the navbar
 $(document).ready(function() {
     $.getJSON('/js/navbartranslation.json', function(data) {
         $.each(data.navsv, function() {
@@ -99,7 +100,7 @@ $(document).ready(function() {
     })
 })
 
-
+//Changes the language from swedish to english when the british flag is pressed
 $('.britFlag').click(function(){
     $(document).ready(function() {
         $.getJSON('/js/navbartranslation.json', function(data) {
@@ -113,6 +114,7 @@ $('.britFlag').click(function(){
 
 })
 
+//Changes the language from english to swedish when the swedish flag is pressed
 $('.sweFlag').click(function(){
     $(document).ready(function() {
         $.getJSON('/js/navbartranslation.json', function(data) {
@@ -125,6 +127,7 @@ $('.sweFlag').click(function(){
     })
 })
 
+//Adds the english headliner to the start page
 $(document).ready(function() {
     $.getJSON('/js/frontCardsTranslation.json', function(data) {
         $.each(data.headlinerEngText, function() {
@@ -135,6 +138,7 @@ $(document).ready(function() {
     })
 })
 
+//Adds the swedish headliner to the start page
 $(document).ready(function() {
     $.getJSON('/js/frontCardsTranslation.json', function(data) {
         $.each(data.headlinerSweText, function() {
@@ -144,11 +148,15 @@ $(document).ready(function() {
     })
 })
 
+//hides the swedish headliner and shows the english headliner
+//on the start page when the british flag is clicked
 $('.britFlag').click(function() {
     $('.textClassSwe').hide()
     $('.textClassEng').show()
 })
 
+//hides the english headliner and shows the swedish headliner
+//on the start page when the swedish flag is clicked
 $('.sweFlag').click(function () {
     $('.textClassEng').hide()
     $('.textClassSwe').show()
