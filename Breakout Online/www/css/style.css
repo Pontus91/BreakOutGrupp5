@@ -7,6 +7,7 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900");
 @import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Condensed");
 @import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Chakra+Petch");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -41,8 +42,8 @@
 *,
 *::before,
 *::after {
-     -webkit-box-sizing: border-box;
-      box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -9669,7 +9670,7 @@ body {
 a {
   padding: 10px;
   margin-left: 10px;
-  color: #4588cf;
+  color: #75a6da;
 }
 
 .bg-light {
@@ -9763,5 +9764,18 @@ article {
 .btn-primary {
   background-color: #4588cf;
   border-color: #4588cf;
+}
+
+.display-4 {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 8rem;
+  color: white;
+  text-shadow: 3px 2px 5px #4588cf;
+}
+
+.headlineSummary {
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 2rem;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */
