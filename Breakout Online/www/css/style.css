@@ -6,6 +6,7 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900");
 @import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Condensed");
+@import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Condensed");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9690,13 +9691,21 @@ main {
 }
 
 footer {
+  font-family: 'Roboto Condensed', sans-serif;
   background-color: rgba(0, 0, 0, 0.3);
+}
+footer p {
+  color: #f8f8fa;
+}
+
+h6 {
+  color: #f8f8fa;
 }
 
 article {
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 20px;
-  color: white;
+  color: #f8f8fa;
 }
 
 .history .container {
