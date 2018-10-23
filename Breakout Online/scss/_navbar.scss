@@ -1,18 +1,27 @@
 .navbar {
     position: relative;
+
+    display:flex;
+    
     background-color: rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 0px 10px 1px #4588cf;
     -moz-box-shadow: 0px 0px 10px 1px #4588cf;
     box-shadow: 0px 0px 10px 1px #4588cf;
 
     .logo {
-        position: absolute;
-        left: calc(50% - 50px);
-        margin: 0 auto;
-        display: block;
-        top: 8px;
+        //position: absolute;
+        //left: calc(50% - 50px);
+        //margin: 0 auto;
+        //display: block;
+        //top: 8px;
+        margin: 0 40px;
     } 
 
+    &-nav {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 
@@ -40,8 +49,8 @@
 }
 
 .navbar a {
-    padding: 10px;
-    margin-left: 10px; 
+    //padding: 10px;
+    margin: 10px; 
     color: #75a6da;
     position: relative;
     
@@ -72,9 +81,4 @@
 
 .bg-light {
     background-color: #c7c7c7;
-}
-
-nav a {
-    margin-left: 37px;
-    margin-right: -4px;
 }
