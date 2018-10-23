@@ -41,8 +41,8 @@
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+      box-sizing: border-box;
 }
 
 html {
@@ -9677,12 +9677,8 @@ a {
 }
 
 nav a {
-  margin-left: 32px;
-  margin-right: -16px;
-}
-
-.marginFix {
-  margin-left: 500px;
+  margin-left: 37px;
+  margin-right: -4px;
 }
 
 body {
