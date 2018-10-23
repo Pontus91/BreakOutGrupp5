@@ -3,7 +3,7 @@
     {
         "firstFooterSweText": "Kontakt:",
         "secondFooterSweText": "Tel: 0420 65 98",
-        "thirdFooterSweText": "E-post"
+        "thirdFooterSweText": "E-post:"
     }
 ],
 
@@ -11,7 +11,7 @@
     {
         "firstFooterEngText": "Contact:",
         "secondFooterEngText": "Phone: 0420 65 98",
-        "thirdFooterEngText": "E-mail"
+        "thirdFooterEngText": "E-mail:"
     }
 ]
 

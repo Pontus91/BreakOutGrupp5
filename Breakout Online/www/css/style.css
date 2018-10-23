@@ -79,7 +79,7 @@ body {
 
 hr {
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -9728,7 +9728,7 @@ footer {
 footer p {
   color: #98c1f5;
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 h6 {
