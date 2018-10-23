@@ -18,13 +18,22 @@ body {
     -webkit-box-shadow: 0px 0px 10px 1px #4588cf;
     -moz-box-shadow: 0px 0px 10px 1px #4588cf;
     box-shadow: 0px 0px 10px 1px #4588cf;
+    display: inline-block;
+    
       p {
       color: #98c1f5;
+      display: inline-block;
+      margin-left: 10px;
       }
   }
 
  h6 {
     color: #98c1f5;
+    display: inline-block;
+    margin-left: 10px;
   }
 
- 
+ .oneline {
+  display: inline-block;
+  text-align: center;
+ }

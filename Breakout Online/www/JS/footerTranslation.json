@@ -1,16 +1,16 @@
 {
 "footerCardSv": [
     {
-        "firstFooterSweText": "Kontakt",
-        "secondFooterSweText": "Tel: 420 65 98",
+        "firstFooterSweText": "Kontakt:",
+        "secondFooterSweText": "Tel: 0420 65 98",
         "thirdFooterSweText": "E-post"
     }
 ],
 
 "footerCardEng": [
     {
-        "firstFooterEngText": "Contact",
-        "secondFooterEngText": "Phone: 420 65 98",
+        "firstFooterEngText": "Contact:",
+        "secondFooterEngText": "Phone: 0420 65 98",
         "thirdFooterEngText": "E-mail"
     }
 ]
