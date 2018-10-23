@@ -1,7 +1,9 @@
 .navbar {
     position: relative;
     background-color: rgba(0, 0, 0, 0.3);
-    box-shadow: 1px 1px 1px 1px rgb(122, 122, 175);
+    -webkit-box-shadow: 0px 0px 10px 1px #4588cf;
+    -moz-box-shadow: 0px 0px 10px 1px #4588cf;
+    box-shadow: 0px 0px 10px 1px #4588cf;
 
     .logo {
         position: absolute;
@@ -15,20 +17,22 @@
 
 
 .flagDesign {
-    opacity: 0.5;
+    opacity: 1;
     cursor: pointer;
     max-height: 18px;
     max-width: 18px;
 
     &:hover {
-        opacity: 1;
+        opacity: 2;
     }
 }   
 
 .flagPlacement {
     position: absolute;
-    top: 17px;
-    right: 30px;
+    top: 20px;
+    right: 36px;
+    min-height: 23px;
+    min-width: 23px;
 }
 
 .sweFlag {
@@ -37,9 +41,19 @@
 
 a {
     padding: 10px;
-    margin-left: 10px;
+    margin-left: 10px; 
+    color: #4588cf;
 }
 
 .bg-light {
     background-color: #c7c7c7;
+}
+
+nav a {
+    margin-left: 32px;
+    margin-right: -16px;
+}
+
+.marginFix {
+    margin-left: 500px;
 }
