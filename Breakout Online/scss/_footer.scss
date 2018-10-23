@@ -15,6 +15,9 @@ body {
   footer {
     font-family: 'Roboto Condensed', sans-serif;
     background-color: rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 10px 1px #4588cf;
+    -moz-box-shadow: 0px 0px 10px 1px #4588cf;
+    box-shadow: 0px 0px 10px 1px #4588cf;
       p {
       color: #f8f8fa;
       }
