@@ -9667,17 +9667,17 @@ body {
   display: none;
 }
 
-a {
+.navbar a {
   padding: 10px;
   margin-left: 10px;
   color: #75a6da;
   position: relative;
 }
-a:hover {
+.navbar a:hover {
   text-decoration: none;
   color: #75a6da;
 }
-a:before {
+.navbar a:before {
   content: "";
   display: block;
   height: 2px;
@@ -9688,7 +9688,7 @@ a:before {
   -webkit-transition: all ease-in-out 200ms;
   transition: all ease-in-out 200ms;
 }
-a:hover::before {
+.navbar a:hover::before {
   width: 87%;
 }
 
