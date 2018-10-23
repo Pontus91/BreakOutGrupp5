@@ -127,6 +127,7 @@ $('.sweFlag').click(function(){
     })
 })
 
+/*
 //Adds the english headliner to the start page
 $(document).ready(function() {
     $.getJSON('/js/frontCardsTranslation.json', function(data) {
@@ -147,6 +148,7 @@ $(document).ready(function() {
         })
     })
 })
+*/
 
 //hides the swedish headliner and shows the english headliner
 //on the start page when the british flag is clicked
