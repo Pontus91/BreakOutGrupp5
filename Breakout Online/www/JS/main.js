@@ -149,9 +149,9 @@ $(document).ready(function() {
         changeLanguage('sv');
     })
 
-
     initHeader();
 });
+
 
 
 //hides the swedish headliner and shows the english headliner
@@ -169,4 +169,4 @@ $('.sweFlag').click(function () {
     $('.textClassEng').hide()
     
 })
-
+*/
