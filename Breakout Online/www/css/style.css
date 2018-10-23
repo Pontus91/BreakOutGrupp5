@@ -5,6 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 @import url("https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto+Condensed");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -9611,7 +9612,7 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   background-color: white;
   font-family: 'Orbitron', sans-serif;
-  background-image: url(http://img4.wikia.nocookie.net/__cb20120730200249/ipod/images/6/65/Earth_and_Moon.jpg);
+  background-image: url(/images/background.jpg);
   background-size: cover;
 }
 
@@ -9629,6 +9630,9 @@ body {
 
 .navbar {
   position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 1px 1px 1px 1px #7a7aaf;
+          box-shadow: 1px 1px 1px 1px #7a7aaf;
 }
 .navbar .logo {
   position: absolute;
@@ -9682,6 +9686,16 @@ main {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+article {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 20px;
+  color: white;
 }
 
 .zoom {
