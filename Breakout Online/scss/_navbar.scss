@@ -43,6 +43,31 @@ a {
     padding: 10px;
     margin-left: 10px; 
     color: #75a6da;
+    position: relative;
+    
+    &:hover {
+        text-decoration: none;
+        color: #75a6da;
+    }
+
+    &:before {
+        content: "";
+    display: block;
+    height: 2px;
+    background-color: #75a6da;
+
+    position: absolute;
+    top: 35px;
+    width: 0%;
+
+    transition: all ease-in-out 200ms;
+
+    }
+
+    &:hover::before {
+        width: 87%;
+    }
+    
 }
 
 .bg-light {

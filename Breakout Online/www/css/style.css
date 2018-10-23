@@ -9671,6 +9671,25 @@ a {
   padding: 10px;
   margin-left: 10px;
   color: #75a6da;
+  position: relative;
+}
+a:hover {
+  text-decoration: none;
+  color: #75a6da;
+}
+a:before {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #75a6da;
+  position: absolute;
+  top: 35px;
+  width: 0%;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+a:hover::before {
+  width: 87%;
 }
 
 .bg-light {
