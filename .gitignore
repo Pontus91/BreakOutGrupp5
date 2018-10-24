@@ -60,5 +60,6 @@ typings/
 # next.js build output
 .next
 
-Breakout Online/www/css/
+Breakout Online/www/css/*.css
+Breakout Online/www/css/*.css.map
 .DS_STORE
