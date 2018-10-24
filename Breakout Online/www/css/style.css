@@ -9728,7 +9728,7 @@ main {
 
 footer {
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0px 0px 10px 1px #4588cf;
   box-shadow: 0px 0px 10px 1px #4588cf;
 }
@@ -9742,6 +9742,9 @@ h6 {
   color: #98c1f5;
   display: inline-block;
   margin-left: 10px;
+}
+h6 a:hover {
+  color: #98c1f5;
 }
 
 .oneline {
@@ -9814,4 +9817,5 @@ article {
   font-size: 2rem;
   color: white;
 }
+
 /*# sourceMappingURL=style.css.map */
