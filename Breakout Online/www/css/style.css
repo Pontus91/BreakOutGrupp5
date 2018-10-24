@@ -9633,16 +9633,26 @@ body {
 
 .navbar {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   background-color: rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 0px 10px 1px #4588cf;
   box-shadow: 0px 0px 10px 1px #4588cf;
 }
 .navbar .logo {
-  position: absolute;
-  left: calc(50% - 50px);
-  margin: 0 auto;
-  display: block;
-  top: 8px;
+  margin: 0 40px;
+}
+.navbar-nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .flagDesign {
@@ -9667,17 +9677,16 @@ body {
   display: none;
 }
 
-a {
-  padding: 10px;
-  margin-left: 10px;
+.navbar a {
+  margin: 10px;
   color: #75a6da;
   position: relative;
 }
-a:hover {
+.navbar a:hover {
   text-decoration: none;
   color: #75a6da;
 }
-a:before {
+.navbar a:before {
   content: "";
   display: block;
   height: 2px;
@@ -9688,17 +9697,16 @@ a:before {
   -webkit-transition: all ease-in-out 200ms;
   transition: all ease-in-out 200ms;
 }
-a:hover::before {
-  width: 87%;
+.navbar a:hover::before {
+  width: 100%;
 }
 
 .bg-light {
   background-color: #c7c7c7;
 }
 
-nav a {
-  margin-left: 37px;
-  margin-right: -4px;
+.navbar-toggler-icon {
+  background-color: white;
 }
 
 body {
@@ -9796,7 +9804,7 @@ article {
 
 .display-4 {
   font-family: 'Chakra Petch', sans-serif;
-  font-size: 8rem;
+  font-size: 5rem;
   color: white;
   text-shadow: 3px 2px 5px #4588cf;
 }
@@ -9806,5 +9814,4 @@ article {
   font-size: 2rem;
   color: white;
 }
-
 /*# sourceMappingURL=style.css.map */

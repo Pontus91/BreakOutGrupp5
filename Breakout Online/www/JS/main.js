@@ -78,75 +78,81 @@ console.log('No JSON yet');
   // When the JSON has loaded we will see
   // the console.log inisde the function start
 
-  
-//adds the english translation to the navbar
-  $(document).ready(function() {
-    $.getJSON('/js/navbartranslation.json', function(data) {
-        $.each(data.naven, function() {
-            $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-            $('.navbar-nav a').addClass('NavEngLang');
-            $('.NavEngLang').remove();
-        })
-    })
-})
-
-//Adds the swedish translation to the navbar
-$(document).ready(function() {
-    $.getJSON('/js/navbartranslation.json', function(data) {
-        $.each(data.navsv, function() {
-            $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-            $('.navbar-nav a').addClass('NavSweLang');
-        })
-    })
-})
-
 //Changes the language from swedish to english when the british flag is pressed
-$('.britFlag').click(function(){
-    $(document).ready(function() {
-        $.getJSON('/js/navbartranslation.json', function(data) {
-            $.each(data.naven, function() {
-                $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-                $('.navbar-nav a').addClass('NavEngLang');
-                $('.NavSweLang').remove();
-            })
-        })
-    })
-
-})
-
-//Changes the language from english to swedish when the swedish flag is pressed
-$('.sweFlag').click(function(){
-    $(document).ready(function() {
-        $.getJSON('/js/navbartranslation.json', function(data) {
-            $.each(data.navsv, function() {
-                $('.navbar-nav').append('<a href="'+this['href']+'">'+this['nav']+"<a/>");
-                $('.navbar-nav a').addClass('NavSweLang');
-                $('.NavEngLang').remove();
-            })
-        })
-    })
-})
-
-//Adds the english headliner to the start page
 $(document).ready(function() {
-    $.getJSON('/js/frontCardsTranslation.json', function(data) {
-        $.each(data.headlinerEngText, function() {
-            $('.headlineSummary').append("<p>"+this['headlinerEng']+"</p>");
-            $('.headlineSummary p').addClass('textClassEng');
-            $('.textClassEng').hide();
-        })
-    })
-})
+    let navJSON;
 
-//Adds the swedish headliner to the start page
-$(document).ready(function() {
-    $.getJSON('/js/frontCardsTranslation.json', function(data) {
-        $.each(data.headlinerSweText, function() {
-            $('.headlineSummary').append("<p>"+this['headlinerSwe']+"</p>");
-            $('.headlineSummary p').addClass('textClassSwe');
+    const createNavLink = function(href, text) {
+        const a = document.createElement('a');
+
+        a.setAttribute('href', href);
+        a.setAttribute('class', 'NavSweLang');
+        a.innerHTML = text;
+
+        return a;
+    }
+
+    const createNavLinkWrapper = function() {
+        const navWrapper = document.createElement('div');
+        navWrapper.setAttribute('class', 'navbar-nav');
+
+        return navWrapper;
+    }
+
+    const createNav = function(jsonData, lang) {
+        const links = jsonData['nav'+lang].map((navVal) => {
+            return createNavLink(navVal.href, navVal.nav);
+        });
+
+        links.splice(2, 0, createLogo());
+
+        const linkWrapper = createNavLinkWrapper();
+        
+        links.forEach(element => {
+            linkWrapper.append(element);
+        });
+
+        return linkWrapper;
+    };
+
+    const createLogo = function() {
+        const img = document.createElement('img');
+
+        img.setAttribute('src', '/images/logobild.jpg');
+        img.setAttribute('class', 'logo');
+
+        return img;
+    }
+
+    const insertHeaderToDom = function(lang) {
+        const links = createNav(navJSON, lang);
+        document.getElementById('navbarNavAltMarkup').append(links);
+    }
+
+    const initHeader = function() {
+        $.getJSON('/js/navbartranslation.json', function(data) {
+            navJSON = data;
+            insertHeaderToDom('sv');
         })
+    }
+
+    const changeLanguage = function(lang) {
+        $('.navbar-nav').remove();
+        insertHeaderToDom(lang);
+    }
+
+    $('.britFlag').click(function(){
+        changeLanguage('en');
+    });
+
+    $('.sweFlag').click(function(){
+        changeLanguage('sv');
     })
-})
+
+    initHeader();
+});
+
+
 
 //hides the swedish headliner and shows the english headliner
 //on the start page when the british flag is clicked
@@ -163,4 +169,3 @@ $('.sweFlag').click(function () {
     $('.textClassEng').hide()
     
 })
-
