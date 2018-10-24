@@ -62,8 +62,13 @@ $('.sweFlag').click(function() {
 
 */
 
+
+
+
+
+/*
 $(document).ready(function() {
-    $.getJSON('/js/frontCardsTranslation.json', function(data) {
+    $.getJSON('/json/frontCardsTranslation.json', function(data) {
         $.each(data.frontCardEng, function() {
             $('.firstEngCard').append("<p>"+this['firstEngCardText']+"</p>");
             $('.btn-primary').append("<p>"+this['firstButtonEngText']+"</p>");
@@ -108,7 +113,7 @@ $('.britFlag').click(function() {
 })
 
 $('.sweFlag').click(function() {
-    $.getJSON('/js/frontCardsTranslation.json', function(data) {
+    $.getJSON('/json/frontCardsTranslation.json', function(data) {
         $.each(data.frontCardSv, function() {
             $('.btn-primary').append("<p>"+this['firstButtonSweText']+"</p>");
             $('.btn-primary p').addClass('buttonSweSampleText');
@@ -118,3 +123,4 @@ $('.sweFlag').click(function() {
         $('.buttonEngSampleText').hide();
     })
 })
+*/

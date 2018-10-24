@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $.getJSON('/js/footerTranslation.json', function(data) {
+    $.getJSON('/json/footerTranslation.json', function(data) {
         $.each(data.footerCardEng, function() {
             $('.kontaktText').append("<p>"+this['firstFooterEngText']+"<p/>");
             $('.telefonText').append("<p>"+this['secondFooterEngText']+"<p/>");
@@ -17,7 +17,7 @@ $(document).ready(function() {
 })
 
 $(document).ready(function() {
-    $.getJSON('/js/footerTranslation.json', function(data) {
+    $.getJSON('/json/footerTranslation.json', function(data) {
         $.each(data.footerCardSv, function() {
             $('.kontaktText').append("<p>"+this['firstFooterSweText']+"<p/>");
             $('.telefonText').append("<p>"+this['secondFooterSweText']+"<p/>");

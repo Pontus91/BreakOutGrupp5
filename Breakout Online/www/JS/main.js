@@ -71,7 +71,7 @@ $('.flag').click(function () {
 
 // Ask jQuery to load some json data
 // from a url-path and then run the function start
-$.getJSON('/js/translations.json', start);
+$.getJSON('/json/translations.json', start);
 // This will be displayed first
 // because the JSON isn't loaded instantly
 console.log('No JSON yet');
@@ -130,7 +130,7 @@ $(document).ready(function() {
     }
 
     const initHeader = function() {
-        $.getJSON('/js/navbartranslation.json', function(data) {
+        $.getJSON('/json/navbartranslation.json', function(data) {
             navJSON = data;
             insertHeaderToDom('sv');
         })
@@ -153,7 +153,7 @@ $(document).ready(function() {
 });
 
 
-
+/*
 //hides the swedish headliner and shows the english headliner
 //on the start page when the british flag is clicked
 $('.britFlag').click(function() {
@@ -169,3 +169,4 @@ $('.sweFlag').click(function () {
     $('.textClassEng').hide()
     
 })
+*/
