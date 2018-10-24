@@ -29,7 +29,7 @@ function loadGame() {
     startInterval();
   }
 
-  function updateGame(deltaTime) {
+  function updateGame(deltaTime) {//delta is the amount of time that has passed between rendering frames,
     if (paused) { return; }
 
     movePaddle(deltaTime);
@@ -38,9 +38,9 @@ function loadGame() {
 
   function movePaddle(deltaTime) {
     const direction = calculatePaddleDirection();
-    const velocity = direction * paddle.speed * deltaTime;
+    const velocity = direction * paddle.speed * deltaTime;//velocity becomes time sensitive
     paddle.left += velocity;
-    if (paddle.left < gameBorders.left) { paddle.left = 0; }
+    if (paddle.left < gameBorders.left) { paddle.left = 0; }// Switch directions if we go too far
     if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
     paddle.$.css('left', paddle.left);
   }
@@ -59,8 +59,8 @@ function loadGame() {
 
   function calculatePaddleDirection() {
     let movementVelocity = 0;
-    if (keysPressed.left) { --movementVelocity; }
-    else if (keysPressed.right) { ++movementVelocity; }
+    if (keysPressed.left) { --movementVelocity; }//steer contorol of the paddle-left
+    else if (keysPressed.right) { ++movementVelocity; }//steer contorol of the paddle-right
     return movementVelocity;
   }
 
@@ -73,7 +73,7 @@ function loadGame() {
 
   function collisionDetectBallAndGame() {
     if (ball.left < gameBorders.left) {
-      ball.left = 0;
+      ball.left = 0;//to prevent the ball to go outside
       ball.direction.x *= -1;
     } else if (ball.left + ball.width > gameBorders.width) {
       ball.left = gameBorders.width - ball.width;
@@ -83,7 +83,7 @@ function loadGame() {
     if (ball.top < gameBorders.top) {
       ball.top = 0;
       ball.direction.y *= -1;
-    } else if (ball.top + ball.height > gameBorders.height) {
+    } else if (ball.top + ball.height > gameBorders.height) {//if you lose the ball you lose your life man:-)
       loseLife();
       return false;
     }
@@ -100,7 +100,7 @@ function loadGame() {
   }
 
   function collisionDetectBallAndBricks() {
-    for (let i = bricks.length - 1; i >= 0; --i) {
+    for (let i = bricks.length - 1; i >= 0; --i) {//bricks dissapear?
       const brick = bricks[i];
       if (!isRectAOutsideRectB(ball, brick)) {
         if (getHorizontalOrVerticalDirection(brick, ball) == 'horizontal') {
@@ -139,9 +139,9 @@ function loadGame() {
     const aX = objA.left + objA.width / 2;
     const bY = objB.top + objB.height / 2;
     const bX = objB.left + objB.width / 2;
-    const direction = Math.abs(Math.atan2(aY - bY, aX - bX));
+    const direction = Math.abs(Math.atan2(aY - bY, aX - bX));//returns the angle from x axis to a point
     return (Math.abs(direction) < Math.PI / 4 || Math.abs(direction) > Math.PI / 4 * 3) ? 'horizontal' : 'vertical';
-  }
+  }//with atan2 the y coordinate is passed as first argument and x as the second argument- atan2(y,x)
 
   function updateInterface() {
     $('.score span').text((score + '').padStart(5, '0'));
