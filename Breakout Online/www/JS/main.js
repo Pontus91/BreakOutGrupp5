@@ -153,7 +153,7 @@ $(document).ready(function() {
 });
 
 
-
+/*
 //hides the swedish headliner and shows the english headliner
 //on the start page when the british flag is clicked
 $('.britFlag').click(function() {
@@ -169,3 +169,4 @@ $('.sweFlag').click(function () {
     $('.textClassEng').hide()
     
 })
+*/
