@@ -62,6 +62,11 @@ $('.sweFlag').click(function() {
 
 */
 
+
+
+
+
+/*
 $(document).ready(function() {
     $.getJSON('/json/frontCardsTranslation.json', function(data) {
         $.each(data.frontCardEng, function() {
@@ -118,3 +123,4 @@ $('.sweFlag').click(function() {
         $('.buttonEngSampleText').hide();
     })
 })
+*/
