@@ -59,6 +59,11 @@
         color: #75a6da;
     }
 
+    &:focus{
+
+        color: white;
+    }
+
     &:before {
         content: "";
     display: block;
