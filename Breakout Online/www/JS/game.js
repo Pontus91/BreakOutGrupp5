@@ -26,7 +26,7 @@ function loadGame() {
     spawnBricks();
 
     updateInterface();
-    startInterval();
+    startInterval();//frames per seconds
   }
 
   function updateGame(deltaTime) {//delta is the amount of time that has passed between rendering frames,
@@ -186,11 +186,11 @@ function loadGame() {
     });
   }
 
-  function loadGameBorders(){
+  function loadGameBorders(){//borders of the game for paddle and....
     return {
       left: 0,
       top: 0,
-      width: $('.game').width(),
+      width: $('.game').width()-3,
       height: $('.game').height()
     };
   }
@@ -263,7 +263,7 @@ function loadGame() {
     return css;
   }
 
-  function startInterval() {
+  function startInterval() {//game loop that runs evry 10 seconds
     const updateSpeed = 10; // lower = faster
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
