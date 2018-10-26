@@ -24,7 +24,7 @@ function frontendRouter(path){
   let routes = {
     '/': () => { $('body main > *').hide(); $('.start-page').show(); },
     '/history': () => { $('body main > *').hide(); $('.history').show(); },
-    '/breakout-online': () => { $('body main > *').hide(); $('.breakout-online').show(); },
+    '/breakout-online': () => { $('body main > *').hide(); $('.breakout-online').show(); loadGame() },
     '/high-score': () => { $('body main > *').hide(); $('.high-score').show(); },
   };
   // no path found then change path to '/404';
