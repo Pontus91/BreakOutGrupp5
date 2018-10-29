@@ -1,5 +1,8 @@
 // Require the express module
 const express = require('express');
+const Sass = require('./sass');
+const config = require('./config.json');
+
 // Create a new web server
 const app = express();
 // Tell the web server to serve files
@@ -14,3 +17,8 @@ const path = require('path');
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './www/index.html'));
 });
+
+for(let conf of config.sass){
+    new Sass(conf);
+}
+
