@@ -3,6 +3,7 @@ function loadGame() {
   let lives;
   let score;
   let paused;
+  let started = false;
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 300;
@@ -13,13 +14,19 @@ function loadGame() {
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
-  startNewGame();
 
+  startNewGame();
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
     score = 0;
-    paused = false;
+
+    if(started === false){
+    paused = true;
+    }
+    else{
+      paused = false;
+    }
 
     resetBall();
     resetPaddle();
@@ -151,6 +158,9 @@ function loadGame() {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
+    } else if (paused && !started) {
+      $('.main-text').text('Press ENTER to start game...');
+      started = true;
     } else if (paused) {
       $('.main-text').text('PAUSED - press ENTER to continue...');
     } else {
