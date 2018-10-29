@@ -1,13 +1,4 @@
 
-$(".testclass").on("click", function(e){
-    $("a").removeClass("active");
-    $(this).addClass("active");
-  });
-
-$(".testclass").click(function () {
-    $("a").removeClass( "active" );
-    $( ".testclass" ).last().addClass( "active" );
-})
 
 //used to position the text when printing
 let index = 1;
@@ -97,7 +88,7 @@ $(document).ready(function() {
         const a = document.createElement('a');
 
         a.setAttribute('href', href);
-        a.setAttribute('class', 'NavSweLang testclass');
+        a.setAttribute('class', 'NavSweLang activeLinks');
         a.innerHTML = text;
 
         return a;
@@ -163,3 +154,7 @@ $(document).ready(function() {
     initHeader();
 });
 
+$(document).on('click', ".activeLinks", function(e){
+    $("a").removeClass("active");
+    $(this).addClass("active");
+  });

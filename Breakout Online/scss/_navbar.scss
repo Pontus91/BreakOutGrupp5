@@ -77,6 +77,12 @@
     &:hover::before {
         width: 100%;
     }
+
+    &.logo {
+        &:hover::before {
+            width: 0%;
+        }
+    }
     
 }
 
@@ -89,5 +95,5 @@
 }
 
 .active {
-    border-bottom: solid 2px #75a6da !important;
+   color: white !important;
 }
