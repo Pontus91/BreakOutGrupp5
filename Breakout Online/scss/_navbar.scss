@@ -32,7 +32,8 @@
     max-width: 18px;
 
     &:hover {
-        opacity: 2;
+        transition: all 0.5s ease;
+        transform: scale(1.5) perspective(1px)
     }
 }   
 
