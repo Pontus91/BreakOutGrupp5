@@ -1,0 +1,116 @@
+{
+  "title": {
+    "sv": [
+      {
+        "text": "Topplista"
+      }
+    ],
+    "en": [
+      {
+        "text": "Highscore"
+      }
+    ]
+  },
+  "rank-title": {
+    "sv": [
+      {
+        "text": "Plats"
+      }
+    ],
+    "en": [
+      {
+        "text": "Rank"
+      }
+    ]
+  },
+  "score-title": {
+    "sv": [
+      {
+        "text": "Poäng"
+      }
+    ],
+    "en": [
+      {
+        "text": "Score"
+      }
+    ]
+  },
+  "name-title": {
+    "sv": [
+      {
+        "text": "Namn"
+      }
+    ],
+    "en": [
+      {
+        "text": "Name"
+      }
+    ]
+  },
+  "rank": {
+    "sv": [
+      {
+        "text": "1a"
+      },
+      {
+        "text": "2a"
+      },
+      {
+        "text": "3e"
+      },
+      {
+        "text": "4e"
+      },
+      {
+        "text": "5e"
+      },
+      {
+        "text": "6e"
+      },
+      {
+        "text": "7e"
+      },
+      {
+        "text": "8e"
+      },
+      {
+        "text": "9e"
+      },
+      {
+        "text": "10e"
+      }
+    ],
+    "en": [
+      {
+        "text": "1st"
+      },
+      {
+        "text": "2nd"
+      },
+      {
+        "text": "3rd"
+      },
+      {
+        "text": "4th"
+      },
+      {
+        "text": "5th"
+      },
+      {
+        "text": "6th"
+      },
+      {
+        "text": "7th"
+      },
+      {
+        "text": "8th"
+      },
+      {
+        "text": "9th"
+      },
+      {
+        "text": "10th"
+      }
+    ]
+  }
+}
