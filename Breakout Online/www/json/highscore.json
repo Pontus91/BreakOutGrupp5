@@ -112,5 +112,47 @@
         "text": "10th"
       }
     ]
-  }
+  },
+  "highscore": [
+    {
+      "name": "Mikael",
+      "score": "10"
+    },
+    {
+      "name": "Mikael",
+      "score": "9"
+    },
+    {
+      "name": "Mikael",
+      "score": "8"
+    },
+    {
+      "name": "Mikael",
+      "score": "7"
+    },
+    {
+      "name": "Mikael",
+      "score": "6"
+    },
+    {
+      "name": "Mikael",
+      "score": "5"
+    },
+    {
+      "name": "Mikael",
+      "score": "4"
+    },
+    {
+      "name": "Mikael",
+      "score": "3"
+    },
+    {
+      "name": "Mikael",
+      "score": "2"
+    },
+    {
+      "name": "Mikael",
+      "score": "1"
+    }
+  ]
 }
