@@ -220,8 +220,8 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
+    ball.$.css('left', (ball.left = gameBorders.width/2));
+    ball.$.css('top', (ball.top = gameBorders.height/1.2));
     ball.direction = { x: 1, y: 1 };
 
     ball.width = ball.$.width();
