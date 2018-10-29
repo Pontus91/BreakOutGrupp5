@@ -1,3 +1,5 @@
+
+
 //used to position the text when printing
 let index = 1;
 //used to set the language between swedish and english
@@ -86,7 +88,7 @@ $(document).ready(function() {
         const a = document.createElement('a');
 
         a.setAttribute('href', href);
-        a.setAttribute('class', 'NavSweLang');
+        a.setAttribute('class', 'NavSweLang activeLinks');
         a.innerHTML = text;
 
         return a;
@@ -156,21 +158,7 @@ $(document).ready(function() {
     initHeader();
 });
 
-
-/*
-//hides the swedish headliner and shows the english headliner
-//on the start page when the british flag is clicked
-$('.britFlag').click(function() {
-    $('.textClassSwe').hide()
-    $('.textClassEng').show()
-})
-
-//hides the english headliner and shows the swedish headliner
-//on the start page when the swedish flag is clicked
-$('.sweFlag').click(function () {
-    $('.textClassEng').hide()
-    $('.textClassSwe').show()
-    $('.textClassEng').hide()
-    
-})
-*/
+$(document).on('click', ".activeLinks", function(e){
+    $("a").removeClass("active");
+    $(this).addClass("active");
+  });
