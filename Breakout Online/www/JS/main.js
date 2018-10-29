@@ -116,12 +116,16 @@ $(document).ready(function() {
     };
 
     const createLogo = function() {
+        const a = document.createElement('a');
         const img = document.createElement('img');
 
+        a.setAttribute('href', '/');
+        a.setAttribute('class', 'logo');
         img.setAttribute('src', '/images/logobild.jpg');
-        img.setAttribute('class', 'logo');
 
-        return img;
+        a.appendChild(img);
+
+        return a;
     }
 
     const insertHeaderToDom = function(lang) {

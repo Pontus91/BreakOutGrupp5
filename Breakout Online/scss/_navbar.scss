@@ -82,6 +82,12 @@
     &:hover::before {
         width: 100%;
     }
+
+    &.logo {
+        &:hover::before {
+            width: 0%;
+        }
+    }
     
 }
 
