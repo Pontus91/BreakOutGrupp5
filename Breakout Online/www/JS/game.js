@@ -76,6 +76,7 @@ function loadGame() {
     paused = true;
     updateInterface();
     resetBall();
+    resetPaddle();
   }
 
   function collisionDetectBallAndGame() {
@@ -158,6 +159,9 @@ function loadGame() {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
+      if(keysPressed.enter){
+        startNewGame();
+      }
     } else if (paused && !started) {
       $('.main-text').text('Press ENTER to start game...');
       started = true;
