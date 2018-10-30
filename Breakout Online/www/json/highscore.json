@@ -11,7 +11,7 @@
       }
     ]
   },
-  "rank-title": {
+  "ranktitle": {
     "sv": [
       {
         "text": "Plats"
@@ -23,7 +23,7 @@
       }
     ]
   },
-  "score-title": {
+  "scoretitle": {
     "sv": [
       {
         "text": "Poäng"
@@ -35,7 +35,7 @@
       }
     ]
   },
-  "name-title": {
+  "nametitle": {
     "sv": [
       {
         "text": "Namn"
@@ -116,7 +116,7 @@
   "highscore": [
     {
       "name": "Mikael",
-      "score": "10"
+      "score": "123123"
     },
     {
       "name": "Mikael",
@@ -128,7 +128,7 @@
     },
     {
       "name": "Mikael",
-      "score": "7"
+      "score": "12312344"
     },
     {
       "name": "Mikael",
