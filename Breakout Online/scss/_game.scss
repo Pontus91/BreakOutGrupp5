@@ -35,11 +35,23 @@
   .paddle {
     width: 200px;
     height: 30px;
-    background-color: #999;
+    background-color: rgb(235, 13, 13);
     position: absolute;
     z-index: 1;
     bottom: 0;
+    border-radius: 20%;
+    background-color: rgb(242, 241, 248);
+    box-shadow:
+        0 0 30px 5px #fff,  
+        0 0 50px 30px rgb(53, 40, 231), 
+        0 0 100px 70px rgb(38, 0, 255); 
   }
+ 
+
+
+
+
+
    
   .brick {
     left: 300px;
