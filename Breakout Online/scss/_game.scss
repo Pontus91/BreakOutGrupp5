@@ -35,14 +35,13 @@
   .paddle {
     width: 200px;
     height: 30px;
-    background-color: rgb(235, 13, 13);
     position: absolute;
     z-index: 1;
     bottom: 0;
     border-radius: 20%;
-    background-color: rgb(242, 241, 248);
+    background-color: rgb(  211, 220, 248 );
     box-shadow:
-        0 0 30px 5px #fff,  
+        0 0 30px 5px #516bfb ,  
         0 0 50px 30px rgb(53, 40, 231), 
         0 0 100px 70px rgb(38, 0, 255); 
   }
@@ -54,13 +53,21 @@
 
    
   .brick {
-    left: 300px;
+    left: 25px;
     top: 200px;
     width: 50px;
     height: 20px;
-    background-color: #777;
     position: absolute;
     z-index: 1;
+    
+    box-shadow:
+    inset 0 0 50px rgb(32, 54, 248),     
+    inset 20px 0 300px rgb(46, 32, 241), 
+    inset -20px 0 300px #0ff, 
+    0 0 20px rgb(38, 42, 241),           
+    -10px 0 80px rgb(19, 52, 238),       
+    10px 0 40px  #144cf9 ; 
+
   }
    
   .ball {
