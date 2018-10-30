@@ -266,6 +266,17 @@ function loadGame() {
 
       prevLeft += brickCSS.width * 2;
     }
+
+    prevLeft = brickCSS.left;
+
+    for (let color of colors) {
+      const brick = createBrick(prevLeft, 100, brickCSS.width, brickCSS.height, color);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 2;
+    }
   }
 
   function createBrick(left, top, width, height, backgroundColor) {
