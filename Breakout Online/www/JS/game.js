@@ -237,7 +237,18 @@ function loadGame() {
       'rgb(0, 0, 255)',
       'rgb(255, 255, 0)',
       'rgb(255, 0, 255)',
+      'rgb(255, 0, 0)',
+      'rgb(0, 255, 0)',
+      'rgb(0, 0, 255)',
+      'rgb(255, 255, 0)',
+      'rgb(255, 0, 255)',
+      'rgb(255, 0, 0)',
+      'rgb(0, 255, 0)',
+      'rgb(0, 0, 255)',
+      'rgb(255, 255, 0)',
+      'rgb(255, 0, 255)',
     ];
+    
 
     let prevLeft = brickCSS.left;
 
@@ -247,7 +258,7 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.4;
     }
   }
 
