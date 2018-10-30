@@ -32,7 +32,8 @@
     max-width: 18px;
 
     &:hover {
-        opacity: 2;
+        transition: all 0.5s ease;
+        transform: scale(1.5) perspective(1px)
     }
 }   
 
@@ -59,11 +60,6 @@
         color: #75a6da;
     }
 
-    &:focus{
-
-        color: white;
-    }
-
     &:before {
         content: "";
     display: block;
@@ -81,6 +77,12 @@
     &:hover::before {
         width: 100%;
     }
+
+    &.logo {
+        &:hover::before {
+            width: 0%;
+        }
+    }
     
 }
 
@@ -90,4 +92,8 @@
 
 .navbar-toggler-icon {
     background-color: #75a6da;
+}
+
+.active {
+   color: white !important;
 }

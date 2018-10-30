@@ -3,6 +3,9 @@ function loadGame() {
   let lives;
   let score;
   let paused;
+  let started = false;
+  let numOfWins = 1;
+  let newBallSpeed = 0;
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 300;
@@ -13,13 +16,19 @@ function loadGame() {
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
-  startNewGame();
 
+  startNewGame();
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
     score = 0;
-    paused = false;
+
+    if(started === false){
+    paused = true;
+    }
+    else{
+      paused = false;
+    }
 
     resetBall();
     resetPaddle();
@@ -69,6 +78,7 @@ function loadGame() {
     paused = true;
     updateInterface();
     resetBall();
+    resetPaddle();
   }
 
   function collisionDetectBallAndGame() {
@@ -149,12 +159,25 @@ function loadGame() {
     $('.main-text').hide();
     if (lives < 1) {
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      numOfWins = 1;
+      changeBallSpeed(numOfWins);
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
+      if(keysPressed.enter){
+        numOfWins++;
+        startNewGame();
+        changeBallSpeed(numOfWins);
+        console.log(numOfWins);
+      }
+    } else if (paused && !started) {
+      $('.main-text').text('Press ENTER to start game...');
+      started = true;
     } else if (paused) {
       $('.main-text').text('PAUSED - press ENTER to continue...');
+      changeBallSpeed(numOfWins);
     } else {
       $('.main-text').text('');
+      changeBallSpeed(numOfWins);
     }
     $('.main-text').fadeIn(500);
   }
@@ -168,7 +191,6 @@ function loadGame() {
     } else {
       startNewGame();
     }
-
     updateInterface();
   }
 
@@ -210,12 +232,17 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = 0));
-    ball.$.css('top', (ball.top = 0));
+    ball.$.css('left', (ball.left = gameBorders.width/2));
+    ball.$.css('top', (ball.top = gameBorders.height/1.2));
     ball.direction = { x: 1, y: 1 };
 
     ball.width = ball.$.width();
     ball.height = ball.$.height();
+  }
+
+  function changeBallSpeed(numOfWins){
+    newBallSpeed = initialBallSpeed*numOfWins;
+    ball.speed = newBallSpeed;
   }
 
   function spawnBricks() {
@@ -227,7 +254,18 @@ function loadGame() {
       'rgb(0, 0, 255)',
       'rgb(255, 255, 0)',
       'rgb(255, 0, 255)',
+      'rgb(255, 0, 0)',
+      'rgb(0, 255, 0)',
+      'rgb(0, 0, 255)',
+      'rgb(255, 255, 0)',
+      'rgb(255, 0, 255)',
+      'rgb(255, 0, 0)',
+      'rgb(0, 255, 0)',
+      'rgb(0, 0, 255)',
+      'rgb(255, 255, 0)',
+      'rgb(255, 0, 255)',
     ];
+    
 
     let prevLeft = brickCSS.left;
 
@@ -237,7 +275,7 @@ function loadGame() {
       bricks.push(brick);
       $('.game').append(brick.$);
 
-      prevLeft += brickCSS.width * 2;
+      prevLeft += brickCSS.width * 1.4;
     }
   }
 
