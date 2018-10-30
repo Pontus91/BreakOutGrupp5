@@ -52,11 +52,21 @@
   }
    
   .ball {
+    background-image: url("/images/stormtrooper.png");
     position: absolute;
     height: 30px;
     width: 30px;
-    background-color: #fff;
+    
     border-radius: 50%;
-  }
+    
+      -webkit-animation: rotation 2s infinite linear;
   
-}
+  }
+  @-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}}
