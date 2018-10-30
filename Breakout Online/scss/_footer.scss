@@ -24,6 +24,7 @@ body {
       color: #98c1f5;
       display: inline-block;
       margin-left: 5px;
+      margin-top: 11px;
     }
   }
 
@@ -36,7 +37,9 @@ body {
     }
   }
 
- .oneline {
-  display: inline-block;
+
+.footerTextPosition {
+  display: flex;
+  justify-content: center;
   text-align: center;
- }
+}
