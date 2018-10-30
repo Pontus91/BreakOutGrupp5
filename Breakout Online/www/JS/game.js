@@ -261,9 +261,6 @@ function loadGame() {
       'rgb(255, 0, 255)',
       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
     ];
 
 
@@ -281,7 +278,7 @@ function loadGame() {
     prevLeft = brickCSS.left;
     for (let color of colors) {
 
-      const brick = createBrick(prevLeft, brickCSS.top + 65, brickCSS.width, brickCSS.height, color); bricks.push(brick);
+      const brick = createBrick(prevLeft, brickCSS.top + brickCSS.height + 20, brickCSS.width, brickCSS.height, color); bricks.push(brick);
 
       $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
 
@@ -289,7 +286,7 @@ function loadGame() {
     prevLeft = brickCSS.left;
     for (let color of colors) {
 
-      const brick = createBrick(prevLeft, brickCSS.top + 35, brickCSS.width, brickCSS.height, color); bricks.push(brick);
+      const brick = createBrick(prevLeft, brickCSS.top + (brickCSS.height + 20) * 2, brickCSS.width, brickCSS.height, color); bricks.push(brick);
 
       $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
 
