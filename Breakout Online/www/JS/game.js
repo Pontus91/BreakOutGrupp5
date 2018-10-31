@@ -8,7 +8,7 @@ function loadGame() {
   let newBallSpeed = 0;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 300;
+  const initialPaddleSpeed = 500;
   const initialBallSpeed = 320;
   const paddle = {};
   const ball = {};
