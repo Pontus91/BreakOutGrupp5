@@ -253,30 +253,30 @@ function loadGame() {
     $(".paddle").css("width", "100px");
     paddle.width = 100;
   }
-  
+
   function initialPaddleSize() {
     $(".paddle").css("width", "200px");
     paddle.width = 200;
   }
-  
+
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
     const colors = [
+      'rgb(255,0,0)',
+      'rgb(0,255,0)',
+      'rgb(0,0,255)',
+      'rgb(238,241,17)',
       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
       'rgb(0, 0, 255)',
-       'rgb(255, 0, 0)',
-       'rgb(255, 0, 0)',
+      'rgb(255, 0, 0)',
+      'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
       'rgb(0, 0, 255)',
-       'rgb(255, 0, 0)',
-       'rgb(255, 0, 0)',
-      'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-       'rgb(255, 0, 0)',
-       
-      
+      'rgb(255, 0, 0)',
+
+
     ];
 
     let prevLeft = brickCSS.left;
@@ -319,7 +319,7 @@ function loadGame() {
   }
 
   function createBrick(left, top, width, height, backgroundColor, worth) {
-    const brick = $('<div class="brick">'+'<div class="bricks65">').css({ backgroundColor, left, top });
+    const brick = $('<div class="brick">' + '<div class="bricks65">').css({ backgroundColor, left, top });
     return {
       $: brick,
       left,
