@@ -10,6 +10,9 @@
   border-style:solid;
   border-width: 5px;
   border-color: white;
+  background-image: url("/images/backgroundGame1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   
      
   .score {
@@ -47,12 +50,7 @@
   }
  
 
-
-
-
-
-   
-  .brick {
+  .brick65 {
     left: 25px;
     top: 200px;
     width: 50px;
@@ -61,12 +59,31 @@
     z-index: 1;
     
     box-shadow:
-    inset 0 0 50px rgb(32, 54, 248),     
-    inset 20px 0 300px rgb(46, 32, 241), 
-    inset -20px 0 300px #0ff, 
-    0 0 20px rgb(38, 42, 241),           
-    -10px 0 80px rgb(19, 52, 238),       
-    10px 0 40px  #144cf9 ; 
+    inset 0 0 50px rgb(16, 219, 77),     
+    inset 20px 0 300px rgb(13, 236, 87), 
+    0 0 20px rgb(38, 241, 72),           
+   // -10px 0 80px rgb(19, 238, 66),       
+   // 10px 0 40px  #14f94d ; 
+
+  }
+
+
+
+   
+  .brick {
+    left: 2.77vh;
+    top: 200px;
+    width: 7vh;
+    height: 20px;
+    position: absolute;
+    z-index: 1;
+    
+    box-shadow:
+    inset 0 0 30px rgb(32, 54, 248),     
+    inset 10px 0 300px rgb(46, 32, 241), 
+    0 0 10px rgb(38, 42, 241),           
+   // 0px 0 50px rgb(19, 52, 238),       
+   // 0px 0 30px  #144cf9 ; 
 
   }
    

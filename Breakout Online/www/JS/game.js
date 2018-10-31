@@ -23,10 +23,10 @@ function loadGame() {
     lives = 3;
     score = 0;
 
-    if(started === false){
-    paused = true;
+    if (started === false) {
+      paused = true;
     }
-    else{
+    else {
       paused = false;
     }
 
@@ -163,7 +163,7 @@ function loadGame() {
       changeBallSpeed(numOfWins);
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
-      if(keysPressed.enter){
+      if (keysPressed.enter) {
         numOfWins++;
         startNewGame();
         changeBallSpeed(numOfWins);
@@ -208,11 +208,11 @@ function loadGame() {
     });
   }
 
-  function loadGameBorders(){//borders of the game for paddle and....
+  function loadGameBorders() {//borders of the game for paddle and....
     return {
       left: 0,
       top: 0,
-      width: $('.game').width()-3,
+      width: $('.game').width() - 3,
       height: $('.game').height()
     };
   }
@@ -232,16 +232,16 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = gameBorders.width/2));
-    ball.$.css('top', (ball.top = gameBorders.height/1.2));
+    ball.$.css('left', (ball.left = gameBorders.width / 2));
+    ball.$.css('top', (ball.top = gameBorders.height / 1.2));
     ball.direction = { x: 1, y: 1 };
 
     ball.width = ball.$.width();
     ball.height = ball.$.height();
   }
 
-  function changeBallSpeed(numOfWins){
-    newBallSpeed = initialBallSpeed*numOfWins;
+  function changeBallSpeed(numOfWins) {
+    newBallSpeed = initialBallSpeed * numOfWins;
     ball.speed = newBallSpeed;
   }
 
@@ -261,11 +261,9 @@ function loadGame() {
       'rgb(255, 0, 255)',
       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
-      'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
     ];
-    
+
+
 
     let prevLeft = brickCSS.left;
 
@@ -277,10 +275,26 @@ function loadGame() {
 
       prevLeft += brickCSS.width * 1.4;
     }
+    prevLeft = brickCSS.left;
+    for (let color of colors) {
+
+      const brick = createBrick(prevLeft, brickCSS.top + brickCSS.height + 20, brickCSS.width, brickCSS.height, color); bricks.push(brick);
+
+      $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
+
+    }
+    prevLeft = brickCSS.left;
+    for (let color of colors) {
+
+      const brick = createBrick(prevLeft, brickCSS.top + (brickCSS.height + 20) * 2, brickCSS.width, brickCSS.height, color); bricks.push(brick);
+
+      $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
+
+    }
   }
 
   function createBrick(left, top, width, height, backgroundColor) {
-    const brick = $('<div class="brick">').css({ backgroundColor, left, top });
+    const brick = $('<div class="brick">'+'<div class="bricks65">').css({ backgroundColor, left, top });
     return {
       $: brick,
       left,
