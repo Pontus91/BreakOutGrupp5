@@ -6,6 +6,7 @@ function loadGame() {
   let started = false;
   let numOfWins = 1;
   let newBallSpeed = 0;
+  let brickWorth;
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 500;
@@ -120,9 +121,10 @@ function loadGame() {
           // If it bounced above/below a brick
           ball.direction.y *= -1;
         }
+        score += brick.worth;
         brick.$.remove();
         bricks.splice(i, 1);
-        score += 20;
+        //score += 20;
         updateInterface();
       }
     }
@@ -256,6 +258,7 @@ function loadGame() {
     $(".paddle").css("width", "200px");
     paddle.width = 200;
   }
+  
   function spawnBricks() {
     const brickCSS = getBrickCSS('left', 'top', 'width', 'height');
 
@@ -279,7 +282,7 @@ function loadGame() {
     let prevLeft = brickCSS.left;
 
     for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color);
+      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color, 60);
 
       bricks.push(brick);
       $('.game').append(brick.$);
@@ -289,7 +292,7 @@ function loadGame() {
     prevLeft = brickCSS.left;
     for (let color of colors) {
 
-      const brick = createBrick(prevLeft, brickCSS.top + brickCSS.height + 20, brickCSS.width, brickCSS.height, color); bricks.push(brick);
+      const brick = createBrick(prevLeft, brickCSS.top + brickCSS.height + 20, brickCSS.width, brickCSS.height, color, 40); bricks.push(brick);
 
       $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
 
@@ -297,14 +300,14 @@ function loadGame() {
     prevLeft = brickCSS.left;
     for (let color of colors) {
 
-      const brick = createBrick(prevLeft, brickCSS.top + (brickCSS.height + 20) * 2, brickCSS.width, brickCSS.height, color); bricks.push(brick);
+      const brick = createBrick(prevLeft, brickCSS.top + (brickCSS.height + 20) * 2, brickCSS.width, brickCSS.height, color, 20); bricks.push(brick);
 
       $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
 
     }
   }
 
-  function createBrick(left, top, width, height, backgroundColor) {
+  function createBrick(left, top, width, height, backgroundColor, worth) {
     const brick = $('<div class="brick">'+'<div class="bricks65">').css({ backgroundColor, left, top });
     return {
       $: brick,
@@ -312,7 +315,8 @@ function loadGame() {
       top,
       width,
       height,
-      backgroundColor
+      backgroundColor,
+      worth
     };
   }
 
