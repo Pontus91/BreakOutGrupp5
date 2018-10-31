@@ -277,9 +277,18 @@ function loadGame() {
       'rgb(0, 255, 0)',
     ];
 
-
-
     let prevLeft = brickCSS.left;
+
+    for (let color of colors) {
+      const brick = createBrick(prevLeft, brickCSS.top - brickCSS.height - 20, brickCSS.width, brickCSS.height, color, 80);
+
+      bricks.push(brick);
+      $('.game').append(brick.$);
+
+      prevLeft += brickCSS.width * 1.4;
+    }
+
+    prevLeft = brickCSS.left;
 
     for (let color of colors) {
       const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color, 60);
