@@ -165,7 +165,10 @@ function loadGame() {
       changeBallSpeed(numOfWins);
       initialPaddleSize();
     } else if (!bricks.length) {
-      $('.main-text').text('CONGRATULATIONS - YOU WON');
+      $('.main-text').addClass("text-animation")
+      $('.text-animation').text('YOU WON, PRESS ENTER FOR NEXT LEVEL');
+
+
       if (keysPressed.enter) {
         numOfWins++;
         smallPaddleSize();
@@ -174,9 +177,11 @@ function loadGame() {
         console.log(numOfWins);
       }
     } else if (paused && !started) {
+      $('.main-text').removeClass("text-animation");
       $('.main-text').text('Press ENTER to start game...');
       started = true;
     } else if (paused) {
+      $('.main-text').removeClass("text-animation");
       $('.main-text').text('PAUSED - press ENTER to continue...');
       changeBallSpeed(numOfWins);
     } else {

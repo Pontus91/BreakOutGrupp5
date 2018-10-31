@@ -1,0 +1,16 @@
+.text-animation {
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: 
+      typing 4.5s steps(60, end),
+      blink-caret .5s step-end infinite;
+  }
+ 
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
