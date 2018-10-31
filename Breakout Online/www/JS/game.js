@@ -236,7 +236,7 @@ function loadGame() {
   function resetBall() {
     ball.$ = $('.ball');
     ball.speed = initialBallSpeed;
-    ball.$.css('left', (ball.left = gameBorders.width / 2));
+    ball.$.css('left', (ball.left = gameBorders.width / 2 - 40));
     ball.$.css('top', (ball.top = gameBorders.height / 1.2));
     ball.direction = { x: 1, y: 1 };
 
@@ -266,21 +266,23 @@ function loadGame() {
       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
       'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
-      'rgb(255, 0, 0)',
+       'rgb(255, 0, 0)',
+       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
       'rgb(0, 0, 255)',
-      'rgb(255, 255, 0)',
-      'rgb(255, 0, 255)',
-      'rgb(255, 0, 0)',
+       'rgb(255, 0, 0)',
+       'rgb(255, 0, 0)',
       'rgb(0, 255, 0)',
+      'rgb(0, 0, 255)',
+       'rgb(255, 0, 0)',
+       
+      
     ];
 
     let prevLeft = brickCSS.left;
 
     for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top - brickCSS.height - 20, brickCSS.width, brickCSS.height, color, 80);
+      const brick = createBrick(prevLeft, brickCSS.top - brickCSS.height - 20, brickCSS.width, brickCSS.height, colors[0], 80);
 
       bricks.push(brick);
       $('.game').append(brick.$);
@@ -291,7 +293,7 @@ function loadGame() {
     prevLeft = brickCSS.left;
 
     for (let color of colors) {
-      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, color, 60);
+      const brick = createBrick(prevLeft, brickCSS.top, brickCSS.width, brickCSS.height, colors[1], 60);
 
       bricks.push(brick);
       $('.game').append(brick.$);
@@ -301,7 +303,7 @@ function loadGame() {
     prevLeft = brickCSS.left;
     for (let color of colors) {
 
-      const brick = createBrick(prevLeft, brickCSS.top + brickCSS.height + 20, brickCSS.width, brickCSS.height, color, 40); bricks.push(brick);
+      const brick = createBrick(prevLeft, brickCSS.top + brickCSS.height + 20, brickCSS.width, brickCSS.height, colors[2], 40); bricks.push(brick);
 
       $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
 
@@ -309,7 +311,7 @@ function loadGame() {
     prevLeft = brickCSS.left;
     for (let color of colors) {
 
-      const brick = createBrick(prevLeft, brickCSS.top + (brickCSS.height + 20) * 2, brickCSS.width, brickCSS.height, color, 20); bricks.push(brick);
+      const brick = createBrick(prevLeft, brickCSS.top + (brickCSS.height + 20) * 2, brickCSS.width, brickCSS.height, colors[3], 20); bricks.push(brick);
 
       $('.game').append(brick.$); prevLeft += brickCSS.width * 1.4;
 
