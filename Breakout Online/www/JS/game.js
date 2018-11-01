@@ -162,12 +162,18 @@ function loadGame() {
     $('.main-text').hide();
     if (lives < 1) {
       scoreAtEnd = score;
-      $('#exampleModal').modal('toggle');
-      $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
-      
       numOfWins = 1;
       changeBallSpeed(numOfWins);
       initialPaddleSize();
+
+      $.getJSON('/json/highscoreonly.json', function(hiscorelist){
+        if(hiscorelist[9].score < scoreAtEnd){
+          // you are on the highscore list!!
+          $('#exampleModal').modal('toggle');
+          $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+        }
+      });
+     
     } else if (!bricks.length) {
       $('.main-text').text('CONGRATULATIONS - YOU WON');
       if (keysPressed.enter) {
