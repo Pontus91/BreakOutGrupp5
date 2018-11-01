@@ -131,7 +131,7 @@ function loadGame() {
         ball.direction.x = 0;
       }
       
-      console.log(dir);
+      //console.log(dir);
 
       updateInterface();
     }
@@ -145,11 +145,11 @@ function loadGame() {
     // 0 the ball hits the paddle in the middle
     let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
     let zone = 'center';
-    if(relativePosition < -0.7){ zone = "left";}
-    else if(relativePosition > 0.7){ zone = "right";}
-    else if(relativePosition > -0.7 && relativePosition < -0.3){ zone = "middleLeft";}
-    else if(relativePosition < 0.7 && relativePosition > 0.3){ zone = "middleRight";}
-    //console.log(zone);
+    if(relativePosition < -0.6){ zone = "left";}
+    else if(relativePosition > 0.6){ zone = "right";}
+    else if(relativePosition > -0.6 && relativePosition < -0.2){ zone = "middleLeft";}
+    else if(relativePosition < 0.6 && relativePosition > 0.2){ zone = "middleRight";}
+    console.log(relativePosition);
     return zone;
   }
 
