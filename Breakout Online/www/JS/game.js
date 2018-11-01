@@ -6,6 +6,7 @@ function loadGame() {
   let started = false;
   let numOfWins = 1;
   let newBallSpeed = 0;
+  let dir;
   let brickWorth;
   const bricks = [];
   const keysPressed = {};
@@ -56,6 +57,8 @@ function loadGame() {
   }
 
   function moveBall(deltaTime) {
+    
+    console.log(ball.direction.x);
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
 
@@ -106,8 +109,48 @@ function loadGame() {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
       score += 5;
+      dir = whatZone();
+
+      if(dir === "left"){
+        ball.direction.x = -1;
+      }
+
+      else if(dir === "middleLeft"){
+        ball.direction.x = -0.5;
+      }
+
+      else if(dir === "middleRight"){
+        ball.direction.x = 0.5;
+      }
+
+      else if(dir === "right"){
+        ball.direction.x = 1;
+      }
+
+      else if(dir === "center"){
+        ball.direction.x = 0;
+      }
+      
+      console.log(dir);
+
       updateInterface();
     }
+  }
+
+  function whatZone(){
+    let paddleMiddleX = paddle.left + paddle.width/2;
+    let ballMiddleX = ball.left + ball.width/2;
+    // -1 the ball hits the paddle far left
+    // 1 the ball hits the padle far right
+    // 0 the ball hits the paddle in the middle
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+    let zone = 'center';
+    if(relativePosition < -0.7){ zone = "left";}
+    else if(relativePosition > 0.7){ zone = "right";}
+    else if(relativePosition > -0.7 && relativePosition < -0.3){ zone = "middleLeft";}
+    else if(relativePosition < 0.7 && relativePosition > 0.3){ zone = "middleRight";}
+    //console.log(zone);
+    return zone;
   }
 
   function collisionDetectBallAndBricks() {
