@@ -7,6 +7,7 @@ function loadGame() {
   let numOfWins = 1;
   let newBallSpeed = 0;
   let brickWorth;
+  let scoreAtEnd;
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 500;
@@ -160,7 +161,10 @@ function loadGame() {
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
+      scoreAtEnd = score;
+      $('#exampleModal').modal('toggle');
       $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      
       numOfWins = 1;
       changeBallSpeed(numOfWins);
       initialPaddleSize();
@@ -353,5 +357,32 @@ function loadGame() {
         previousTime = now;
       }, updateSpeed);
     }, 1000);
+  }
+
+  $('#send-to-highscore').on('click', postNewHighscore);
+
+  function postNewHighscore() {
+    let name = $('#name').val(); // fetch the name from your <input>/or otherwhere
+    console.log(name);
+    let score = scoreAtEnd; // fetch the score from the game's "score"-variable
+    console.log(score);
+    $.post( "/add-score", { name, score }, function(responseData) {
+      console.log('the new highscore-list is:', responseData);
+      let highscorelist = responseData;
+      console.log(highscorelist);
+
+      //let tbody = $('tbody').empty();
+
+      let i = 0;
+      for (let highscore of highscorelist) {
+        $(`tr.${i} td.score`).empty().append(highscore.score);
+        $(`tr.${i} td.name`).empty().append(highscore.name);
+        console.log(highscore);
+        i++;
+      }
+
+
+      console.error('append/use the new highscore-list then remove this console.error');
+    });
   }
 }
