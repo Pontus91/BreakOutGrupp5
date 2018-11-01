@@ -106,8 +106,22 @@ function loadGame() {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
       score += 5;
+      whatZone();
       updateInterface();
     }
+  }
+
+  function whatZone(){
+    let paddleMiddleX = paddle.left + paddle.width/2;
+    let ballMiddleX = ball.left + ball.width/2;
+    // -1 the ball hits the paddle far left
+    // 1 the ball hits the padle far right
+    // 0 the ball hits the paddle in the middle
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+    let zone = 'center';
+    if(relativePosition < -0.4){ zone = "left";}
+    if(relativePosition > 0.4){ zone = "right";}
+    console.log(zone);
   }
 
   function collisionDetectBallAndBricks() {
