@@ -24,34 +24,6 @@ for(let conf of config.sass){
     new Sass(conf);
 }
 
-/* function checkIfTopTen(score) {
-  let points = score;
-  let highscores = highscoreData.highscore;
-  for (let highscore of highscores) {
-    if (points <= Number(highscore.score)) {
-      continue;
-    } else if (points > Number(highscore.score)) {
-      return true;
-    }
-  }
-  return false;
-} */
-
-/* let highscoreData = require('./www/json/highscore.json'); // load the json file - store it in a new variable
-//console.log(highscoreData);
-
-function checkIfTopTen(score) {
-  let points = score;
-  let highscores = highscoreData.highscore;
-  if (points > Number(highscores[9].score)) {
-    return true;
-  }
-  return false;
-}
-
-let score = 1;
-console.log(checkIfTopTen(score)); */
-
 app.use(bodyParser.json()); // use body-parser
 app.use(bodyParser.urlencoded({ extended: false })); // configure body-parser
 

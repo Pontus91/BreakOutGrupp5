@@ -47,7 +47,7 @@ function HighscoreTranslation(translation, language){
     for (let highscore of highscorelist) {
       $(`tr.${i} td.score`).empty().append(highscore.score);
       $(`tr.${i} td.name`).empty().append(highscore.name);
-      console.log(highscore);
+      //console.log(highscore);
       i++;
     }
   });

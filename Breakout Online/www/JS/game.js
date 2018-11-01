@@ -367,22 +367,19 @@ function loadGame() {
     let score = scoreAtEnd; // fetch the score from the game's "score"-variable
     console.log(score);
     $.post( "/add-score", { name, score }, function(responseData) {
-      console.log('the new highscore-list is:', responseData);
+      //onsole.log('the new highscore-list is:', responseData);
       let highscorelist = responseData;
-      console.log(highscorelist);
-
-      //let tbody = $('tbody').empty();
+      //console.log(highscorelist);
 
       let i = 0;
       for (let highscore of highscorelist) {
         $(`tr.${i} td.score`).empty().append(highscore.score);
         $(`tr.${i} td.name`).empty().append(highscore.name);
-        console.log(highscore);
+        //console.log(highscore);
         i++;
       }
 
-
-      console.error('append/use the new highscore-list then remove this console.error');
+      //console.error('append/use the new highscore-list then remove this console.error');
     });
   }
 }
