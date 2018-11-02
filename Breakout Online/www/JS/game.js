@@ -308,12 +308,12 @@ function loadGame() {
   }
 
   function smallPaddleSize() {
-    $(".paddle").css("width", "100px");
+    $(".paddle").css("width", "10vw");
     paddle.width = 100;
   }
 
   function initialPaddleSize() {
-    $(".paddle").css("width", "200px");
+    $(".paddle").css("width", "20vw");
     paddle.width = 200;
   }
 
