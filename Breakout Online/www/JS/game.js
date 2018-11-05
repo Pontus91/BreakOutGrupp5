@@ -100,6 +100,9 @@ function loadGame() {
       ball.direction.y *= -1;
     } else if (ball.top + ball.height > gameBorders.height) {//if you lose the ball you lose your life man:-)
       loseLife();
+      const audio = new Audio("/sound/haha.mp3");
+        audio.volume = 0.2;
+        audio.play();
       return false;
     }
     return true;
@@ -170,11 +173,15 @@ function loadGame() {
         bricks.splice(i, 1);
         //score += 20;
         updateInterface();
+        const audio = new Audio("/sound/PUNCH.mp3");
+        audio.volume = 0.1;
+        audio.play();
       }
     }
     if (bricks.length == 0) {
       paused = true;
       updateInterface();
+     
     }
   }
 
@@ -221,6 +228,10 @@ function loadGame() {
       $('.main-text').addClass("text-animation")
       $('.text-animation').text('YOU WON, PRESS ENTER FOR NEXT LEVEL');
 
+      const audio = new Audio("/sound/wow.wav");
+      audio.volume = 0.3;
+      audio.play();
+
 
       if (keysPressed.enter) {
         numOfWins += 0.3;
@@ -250,6 +261,7 @@ function loadGame() {
 
     if (lives > 0) {
       paused = !paused;
+      
     } else {
       startNewGame();
     }
@@ -398,6 +410,22 @@ function loadGame() {
     tempBrick.remove();
     return css;
   }
+
+  // play Sound
+  function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}
 
   function startInterval() {//game loop that runs evry 10 seconds
     const updateSpeed = 10; // lower = faster
