@@ -89,6 +89,30 @@
   color: black;
 }
 
+@media (max-width: 991.98px) {
+  body {
+    font-size: 20px;
+  }
+  .game {
+    height: 94vh;
+    width: 100vw;
+    margin-top: 0;
+
+    .paddle {
+      width: 20vw;
+  
+    }
+    .brick {
+      left: 1.5vw;
+      width: 6vw;
+    }
+  }
+
+  footer {
+    display: none;
+  }
+}
+
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
@@ -143,26 +167,3 @@
 }
 
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
-  body {
-    font-size: 20px;
-  }
-  .game {
-    height: 94vh;
-    width: 100vw;
-    margin-top: 0;
-
-    .paddle {
-      width: 20vw;
-  
-    }
-    .brick {
-      left: 1.5vw;
-      width: 6vw;
-    }
-  }
-
-  footer {
-    display: none;
-  }
-}
