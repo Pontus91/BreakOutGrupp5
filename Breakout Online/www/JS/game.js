@@ -11,7 +11,7 @@ function loadGame() {
   let scoreAtEnd;
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 500;
+  const initialPaddleSpeed = 600;
   const initialBallSpeed = 300;
   const paddle = {};
   const ball = {};
@@ -223,7 +223,7 @@ function loadGame() {
 
 
       if (keysPressed.enter) {
-        numOfWins++;
+        numOfWins += 0.3;
         smallPaddleSize();
         startNewGame();
         changeBallSpeed(numOfWins);
@@ -308,13 +308,13 @@ function loadGame() {
   }
 
   function smallPaddleSize() {
-    $(".paddle").css("width", "10vw");
-    paddle.width = 100;
+    $(".paddle").css("width", "12vw");
+    //paddle.width = 100;
   }
 
   function initialPaddleSize() {
-    $(".paddle").css("width", "20vw");
-    paddle.width = 200;
+    $(".paddle").css("width", "16vw");
+    //paddle.width = 200;
   }
 
   function spawnBricks() {
