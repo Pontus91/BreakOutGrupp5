@@ -90,33 +90,6 @@
 }
 
 
-// Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
-
-  body {
-    font-size: 10px;
-  }
-  .game {
-    height: 91vh;
-    width: 100vw;
-    margin-top: 0;
-
-    .paddle {
-      width: 20vw;
-  
-    }
-    .brick {
-      left: 1.5vw;
-      width: 6vw;
-    }
-  }
-
-  footer {
-    display: none;
-  }
-
-}
-
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) {
   body {
@@ -142,8 +115,35 @@
   }
 }
 
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+  body {
+    font-size: 10px;
+  }
+  .game {
+    height: 90vh;
+    width: 100vw;
+    margin-top: 0;
+
+    .paddle {
+      width: 20vw;
+  
+    }
+    .brick {
+      left: 1.5vw;
+      width: 6vw;
+    }
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991.98px) {
+@media (min-width: 767.98px) {
   body {
     font-size: 20px;
   }
