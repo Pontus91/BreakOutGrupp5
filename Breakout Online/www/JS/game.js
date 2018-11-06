@@ -16,6 +16,12 @@ function loadGame() {
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
+  const audio1 = new Audio("/sound/haha.mp3");
+  const audio2 = new Audio("/sound/PUNCH.mp3");
+  const audio3 = new Audio("/sound/wow.wav");
+  audio1.volume = 0;
+  audio2.volume = 0;
+  audio3.volume = 0;
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -100,9 +106,7 @@ function loadGame() {
       ball.direction.y *= -1;
     } else if (ball.top + ball.height > gameBorders.height) {//if you lose the ball you lose your life man:-)
       loseLife();
-      const audio = new Audio("/sound/haha.mp3");
-        audio.volume = 0.2;
-        audio.play();
+        audio1.play();
       return false;
     }
     return true;
@@ -173,9 +177,7 @@ function loadGame() {
         bricks.splice(i, 1);
         //score += 20;
         updateInterface();
-        const audio = new Audio("/sound/PUNCH.mp3");
-        audio.volume = 0.1;
-        audio.play();
+        audio2.play();
       }
     }
     if (bricks.length == 0) {
@@ -235,9 +237,7 @@ function loadGame() {
       $('.main-text').addClass("text-animation")
       $('.text-animation').text('YOU WON, PRESS ENTER FOR NEXT LEVEL');
 
-      const audio = new Audio("/sound/wow.wav");
-      audio.volume = 0.3;
-      audio.play();
+      audio3.play();
 
 
       if (keysPressed.enter) {
@@ -471,4 +471,24 @@ function loadGame() {
       //console.error('append/use the new highscore-list then remove this console.error');
     });
   }
+
+  $('.fa-volume-up').hide();
+
+$('.fa-volume-mute').click(function() {
+    $('.fa-volume-mute').hide();
+    $('.fa-volume-up').show();
+    audio1.volume = 0.2;  
+    audio2.volume = 0.2;  
+    audio3.volume = 0.2;  
+})
+  
+$('.fa-volume-up').click(function() {
+  $('.fa-volume-up').hide();
+  $('.fa-volume-mute').show();
+  audio1.volume = 0;  
+  audio2.volume = 0;  
+  audio3.volume = 0;  
+})
+
 }
+
