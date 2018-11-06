@@ -29,7 +29,7 @@ function loadGame() {
   let dir;
   let brickWorth;
   let scoreAtEnd;
-  const isAdmin = false;
+  const isAdmin = false; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 600;
@@ -302,8 +302,8 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 67 && isAdmin) { bricks.splice(0,bricks.length); updateInterface(); }
-      if (e.which === 77 && isAdmin) { score = 999999999999999 }
+      if (e.which === 67 && isAdmin) { bricks.splice(0,bricks.length); updateInterface(); } // Debug cheatcodes är admin är true
+      if (e.which === 77 && isAdmin) { score = 999999999999999 } // Debug cheatcodes är admin är true
     });
 
     $(window).keyup(function (e) {
