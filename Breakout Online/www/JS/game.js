@@ -223,6 +223,13 @@ function loadGame() {
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
         }
       });
+
+      $.getJSON('/json/highscoreonly.json', function(hiscorelist){
+        if(hiscorelist[9].score > scoreAtEnd){
+          // you are on the highscore list!!
+          $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+        }
+      });
      
     } else if (!bricks.length) {
       $('.main-text').addClass("text-animation")
