@@ -1,7 +1,27 @@
+$(document).keypress(function(event){
+  console.log(event.which)
+});
+
+class saveObject {
+  constructor(){
+    this.score = 0;
+  }
+
+  get score(){
+    return this._score;
+  }
+
+  set score(newScore){
+    this._score = newScore;
+  }
+}
+const scoreObj = new saveObject();
+let score = scoreObj.score;
+
 function loadGame() {
   // Main variables
   let lives;
-  let score;
+  // let score;
   let paused;
   let started = false;
   let numOfWins = 1;
@@ -9,11 +29,12 @@ function loadGame() {
   let dir;
   let brickWorth;
   let scoreAtEnd;
+  const isAdmin = false;
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 600;
   const initialBallSpeed = 300;
-  const paddle = {};
+  const paddle = {};  
   const ball = {};
   let gameBorders = loadGameBorders();
   const audio1 = new Audio("/sound/haha.mp3");
@@ -30,7 +51,7 @@ function loadGame() {
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
-    score = 0;
+    // score = 0;
 
     if (started === false) {
       paused = true;
@@ -183,7 +204,6 @@ function loadGame() {
     if (bricks.length == 0) {
       paused = true;
       updateInterface();
-     
     }
   }
 
@@ -223,6 +243,7 @@ function loadGame() {
           // you are on the highscore list!!
           $('#exampleModal').modal('toggle');
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+          score = 0;
         }
       });
 
@@ -230,6 +251,7 @@ function loadGame() {
         if(hiscorelist[9].score > scoreAtEnd){
           // you are on the highscore list!!
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+          score = 0;
         }
       });
      
@@ -280,6 +302,8 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
+      if (e.which === 67 && isAdmin) { bricks.splice(0,bricks.length); updateInterface(); }
+      if (e.which === 77 && isAdmin) { score = 999999999999999 }
     });
 
     $(window).keyup(function (e) {
