@@ -325,7 +325,7 @@ function loadGame() {
   }
 
   function initialPaddleSize() {
-    $(".paddle").css("width", "16vw");
+    $(".paddle").css("width", "15vw");
     //paddle.width = 200;
   }
 

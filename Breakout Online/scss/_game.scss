@@ -40,7 +40,7 @@
   }
    
   .paddle {
-    width: 16vw;
+    width: 15vw;
     height: 2vw;
     position: absolute;
     z-index: 1;
@@ -113,15 +113,14 @@
   }
 }
 
-
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {
+@media (max-width: 321.98px) {
 
   body {
     font-size: 10px;
   }
   .game {
-    height: 91vh;
+    height: 90vh;
     width: 100vw;
     margin-top: 0;
 
@@ -141,8 +140,9 @@
 
 }
 
+
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) {
+@media (max-width: 767.98px) and (min-width: 322px) {
   body {
     font-size: 10px;
   }
@@ -167,3 +167,27 @@
 }
 
 // Medium devices (tablets, less than 992px)
+
+@media (max-width: 1025.98px) and (min-width: 1024px) {
+  body {
+    font-size: 10px;
+  }
+  .game {
+    height: 95vh;
+    width: 100vw;
+    margin-top: 0;
+
+    .paddle {
+      width: 20vw;
+  
+    }
+    .brick {
+      left: 1.5vw;
+      width: 6vw;
+    }
+  }
+
+  footer {
+    display: none;
+  }
+}
