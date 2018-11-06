@@ -18,11 +18,14 @@
 
 .table {
   margin-left: 25%;
+  //border-color: white;
+ // border: solid 1px;
 }
 
 @media screen and (max-width: 766px) {
   .table {
     margin-left: 21%;
+    
   }
 }
 
