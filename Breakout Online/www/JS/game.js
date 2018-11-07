@@ -1,4 +1,7 @@
 function loadGame() {
+  // Overwrite the function "loadGame" so it can't be executed again.
+  loadGame = function () { }
+
   // Main variables
   let lives;
   let score;
@@ -14,6 +17,25 @@ function loadGame() {
   const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
+
+  let y = 0;
+  let introtxt = 'Welcome to the game';
+  let introspeed = 100;
+  function typeIntro() {
+    if (y < introtxt.length) {
+      $('.intro').html($('.intro').html() + introtxt.charAt(y)); y++;
+      setTimeout(typeIntro, introspeed);
+    }
+    else {
+      $('.game .intro').fadeOut(2200);
+    }
+  }
+  setTimeout(function () {
+    $('.game .intro').fadeIn(100);
+    typeIntro();
+  }, 1200);
+  $('.game .splash').fadeOut(1200);
+
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -39,7 +61,7 @@ function loadGame() {
     startInterval();//frames per seconds
   }
 
-  function updateGame(deltaTime) {//delta is the amount of time that has passed between rendering frames,
+  function updateGame(deltaTime) {
     if (paused) { return; }
 
     movePaddle(deltaTime);
@@ -48,7 +70,7 @@ function loadGame() {
 
   function movePaddle(deltaTime) {
     const direction = calculatePaddleDirection();
-    const velocity = direction * paddle.speed * deltaTime;//velocity becomes time sensitive
+    const velocity = direction * paddle.speed * deltaTime;
     paddle.left += velocity;
     if (paddle.left < gameBorders.left) { paddle.left = 0; }// Switch directions if we go too far
     if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
@@ -94,7 +116,7 @@ function loadGame() {
     if (ball.top < gameBorders.top) {
       ball.top = 0;
       ball.direction.y *= -1;
-    } else if (ball.top + ball.height > gameBorders.height) {//if you lose the ball you lose your life man:-)
+    } else if (ball.top + ball.height > gameBorders.height) {
       loseLife();
       return false;
     }
@@ -111,7 +133,7 @@ function loadGame() {
   }
 
   function collisionDetectBallAndBricks() {
-    for (let i = bricks.length - 1; i >= 0; --i) {//bricks dissapear?
+    for (let i = bricks.length - 1; i >= 0; --i) {
       const brick = bricks[i];
       if (!isRectAOutsideRectB(ball, brick)) {
         if (getHorizontalOrVerticalDirection(brick, ball) == 'horizontal') {
@@ -346,7 +368,7 @@ function loadGame() {
     return css;
   }
 
-  function startInterval() {//game loop that runs evry 10 seconds
+  function startInterval() {
     const updateSpeed = 10; // lower = faster
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
