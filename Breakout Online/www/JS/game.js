@@ -50,8 +50,8 @@ function loadGame() {
   audio4.volume = 0;
 
   let y = 0;
-  let introtxt = 'Welcome to the game';
-  let introspeed = 100;
+  let introtxt = 'BreakOut Online by Group 5';
+  let introspeed = 80;
   function typeIntro() {
     if (y < introtxt.length) {
       $('.intro').html($('.intro').html() + introtxt.charAt(y)); y++;
@@ -65,7 +65,7 @@ function loadGame() {
     $('.game .intro').fadeIn(100);
     typeIntro();
   }, 1200);
-  $('.game .splash').fadeOut(1200);
+  $('.game .splash').fadeOut(1000);
 
 
   // Setup key listeners before starting the first game
