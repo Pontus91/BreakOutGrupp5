@@ -29,7 +29,7 @@ function loadGame() {
   let dir;
   let brickWorth;
   let scoreAtEnd;
-  const isAdmin = false; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
+  const isAdmin = true; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 600;
@@ -250,6 +250,7 @@ function loadGame() {
       $.getJSON('/json/highscoreonly.json', function(hiscorelist){
         if(hiscorelist[9].score > scoreAtEnd){
           // you are on the highscore list!!
+          $('#loseModal').modal('toggle');
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
           score = 0;
         }
