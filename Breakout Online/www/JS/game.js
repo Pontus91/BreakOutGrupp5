@@ -32,7 +32,7 @@ function loadGame() {
   let dir;
   let brickWorth;
   let scoreAtEnd;
-  const isAdmin = true; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
+  const isAdmin = false; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
   const bricks = [];
   window.keysPressed = {};
   const initialPaddleSpeed = 600;
