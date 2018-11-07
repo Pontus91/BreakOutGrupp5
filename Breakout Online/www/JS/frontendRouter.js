@@ -1,6 +1,6 @@
 // For details: https://diveinto.html5doctor.com/history.html
 
-let gameObject = loadGame();
+
 
 // Clicks on links
 $(document).on('click', 'a', function(e){
@@ -26,7 +26,7 @@ function frontendRouter(path){
   let routes = {
     '/': () => { $('body main > *').hide(); $('.start-page').show(); },
     '/history': () => { $('body main > *').hide(); $('.history').show(); },
-    '/breakout-online': () => { $('body main > *').hide(); $('.breakout-online').show(); gameObject; },
+    '/breakout-online': () => { $('body main > *').hide(); $('.breakout-online').show(); loadGame(); },
     '/high-score': () => { $('body main > *').hide(); $('.high-score').show(); },
   };
   // no path found then change path to '/404';
