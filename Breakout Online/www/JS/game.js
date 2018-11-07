@@ -1,17 +1,17 @@
-$(document).keypress(function(event){
+$(document).keypress(function (event) {
   console.log(event.which)
 });
 
 class saveObject {
-  constructor(){
+  constructor() {
     this.score = 0;
   }
 
-  get score(){
+  get score() {
     return this._score;
   }
 
-  set score(newScore){
+  set score(newScore) {
     this._score = newScore;
   }
 }
@@ -37,7 +37,7 @@ function loadGame() {
   const keysPressed = {};
   const initialPaddleSpeed = 600;
   const initialBallSpeed = 300;
-  const paddle = {};  
+  const paddle = {};
   const ball = {};
   let gameBorders = loadGameBorders();
   const audio1 = new Audio("/sound/Sadmusic1.mp3");
@@ -109,7 +109,7 @@ function loadGame() {
   }
 
   function moveBall(deltaTime) {
-    
+
     console.log(ball.direction.x);
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
@@ -151,7 +151,8 @@ function loadGame() {
       ball.direction.y *= -1;
     } else if (ball.top + ball.height > gameBorders.height) {
       loseLife();
-        audio1.play();
+      //Sound when you lose the ball
+      audio1.play();
       return false;
     }
     return true;
@@ -164,45 +165,47 @@ function loadGame() {
       score += 5;
       dir = whatZone();
 
-      if(dir === "left"){
+      if (dir === "left") {
         ball.direction.x = -1;
       }
 
-      else if(dir === "middleLeft"){
+      else if (dir === "middleLeft") {
         ball.direction.x = -0.5;
       }
 
-      else if(dir === "middleRight"){
+      else if (dir === "middleRight") {
         ball.direction.x = 0.5;
       }
 
-      else if(dir === "right"){
+      else if (dir === "right") {
         ball.direction.x = 1;
       }
 
-      else if(dir === "center"){
+      else if (dir === "center") {
         ball.direction.x = 0;
       }
-      
+
       //console.log(dir);
 
       updateInterface();
+
+      // Sound when you hit the paddle
       audio2.play();
     }
   }
 
-  function whatZone(){
-    let paddleMiddleX = paddle.left + paddle.width/2;
-    let ballMiddleX = ball.left + ball.width/2;
+  function whatZone() {
+    let paddleMiddleX = paddle.left + paddle.width / 2;
+    let ballMiddleX = ball.left + ball.width / 2;
     // -1 the ball hits the paddle far left
     // 1 the ball hits the padle far right
     // 0 the ball hits the paddle in the middle
-    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width / 2);
     let zone = 'center';
-    if(relativePosition < -0.6){ zone = "left";}
-    else if(relativePosition > 0.6){ zone = "right";}
-    else if(relativePosition > -0.6 && relativePosition < -0.2){ zone = "middleLeft";}
-    else if(relativePosition < 0.6 && relativePosition > 0.2){ zone = "middleRight";}
+    if (relativePosition < -0.6) { zone = "left"; }
+    else if (relativePosition > 0.6) { zone = "right"; }
+    else if (relativePosition > -0.6 && relativePosition < -0.2) { zone = "middleLeft"; }
+    else if (relativePosition < 0.6 && relativePosition > 0.2) { zone = "middleRight"; }
     console.log(relativePosition);
     return zone;
   }
@@ -223,6 +226,8 @@ function loadGame() {
         bricks.splice(i, 1);
         //score += 20;
         updateInterface();
+
+        // Sound when you hit the bricks
         audio4.play();
       }
     }
@@ -263,8 +268,8 @@ function loadGame() {
       changeBallSpeed(numOfWins);
       initialPaddleSize();
 
-      $.getJSON('/json/highscoreonly.json', function(hiscorelist){
-        if(hiscorelist[9].score < scoreAtEnd){
+      $.getJSON('/json/highscoreonly.json', function (hiscorelist) {
+        if (hiscorelist[9].score < scoreAtEnd) {
           // you are on the highscore list!!
           $('#exampleModal').modal('toggle');
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
@@ -272,19 +277,20 @@ function loadGame() {
         }
       });
 
-      $.getJSON('/json/highscoreonly.json', function(hiscorelist){
-        if(hiscorelist[9].score > scoreAtEnd){
+      $.getJSON('/json/highscoreonly.json', function (hiscorelist) {
+        if (hiscorelist[9].score > scoreAtEnd) {
           // you are on the highscore list!!
           $('#loseModal').modal('toggle');
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
           score = 0;
         }
       });
-     
+
     } else if (!bricks.length) {
       $('.main-text').addClass("text-animation")
       $('.text-animation').text('YOU WON, PRESS ENTER FOR NEXT LEVEL');
-
+      
+      // Sound when you win the lavel
       audio3.play();
 
 
@@ -316,7 +322,7 @@ function loadGame() {
 
     if (lives > 0) {
       paused = !paused;
-      
+
     } else {
       startNewGame();
     }
@@ -328,7 +334,7 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
-      if (e.which === 67 && isAdmin) { bricks.splice(0,bricks.length); updateInterface(); } // Debug cheatcodes är admin är true
+      if (e.which === 67 && isAdmin) { bricks.splice(0, bricks.length); updateInterface(); } // Debug cheatcodes är admin är true
       if (e.which === 77 && isAdmin) { score = 999999999999999 } // Debug cheatcodes är admin är true
     });
 
@@ -469,20 +475,20 @@ function loadGame() {
   }
 
   // play Sound
- /* function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function(){
-        this.sound.play();
-    }
-    this.stop = function(){
-        this.sound.pause();
-    }    
-}*/
+  /* function sound(src) {
+     this.sound = document.createElement("audio");
+     this.sound.src = src;
+     this.sound.setAttribute("preload", "auto");
+     this.sound.setAttribute("controls", "none");
+     this.sound.style.display = "none";
+     document.body.appendChild(this.sound);
+     this.play = function(){
+         this.sound.play();
+     }
+     this.stop = function(){
+         this.sound.pause();
+     }    
+ }*/
 
   function startInterval() {//game loop that runs evry 10 seconds
     const updateSpeed = 10; // lower = faster
@@ -505,7 +511,7 @@ function loadGame() {
     console.log(name);
     let score = scoreAtEnd; // fetch the score from the game's "score"-variable
     console.log(score);
-    $.post( "/add-score", { name, score }, function(responseData) {
+    $.post("/add-score", { name, score }, function (responseData) {
       //onsole.log('the new highscore-list is:', responseData);
       let highscorelist = responseData;
       //console.log(highscorelist);
@@ -522,25 +528,26 @@ function loadGame() {
     });
   }
 
+  // Sounds button
   $('.fa-volume-up').hide();
 
-$('.fa-volume-mute').click(function() {
+  $('.fa-volume-mute').click(function () {
     $('.fa-volume-mute').hide();
     $('.fa-volume-up').show();
-    audio1.volume = 0.2;  
-    audio2.volume = 0.4;  
-    audio3.volume = 0.2;  
+    audio1.volume = 0.2;
+    audio2.volume = 0.4;
+    audio3.volume = 0.2;
     audio4.volume = 0.2;
-})
-  
-$('.fa-volume-up').click(function() {
-  $('.fa-volume-up').hide();
-  $('.fa-volume-mute').show();
-  audio1.volume = 0;  
-  audio2.volume = 0;  
-  audio3.volume = 0;  
-  audio4.volume = 0;  
-})
+  })
+
+  $('.fa-volume-up').click(function () {
+    $('.fa-volume-up').hide();
+    $('.fa-volume-mute').show();
+    audio1.volume = 0;
+    audio2.volume = 0;
+    audio3.volume = 0;
+    audio4.volume = 0;
+  })
 
 }
 
