@@ -1,0 +1,47 @@
+#exampleModalLabel {
+    font-size: 18px;
+    color: white;
+}
+
+.col-form-label {
+    color: white;
+}
+
+.modal-header {
+    background-color: black;
+    background-size: cover;
+    background-position: top;
+
+}
+
+.modal-body {
+    background-image: url(/images/modalBackground.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.modal-footer {
+    background-image: url(/images/modalBackground.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.close {
+    color: white;
+}
+
+.modal-content {
+    border: 1px solid white;
+}
+
+.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+    color: #d7727c;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.btn-secondary:hover {
+    color: #fff;
+    background-color: #75a6da;
+    border-color: #545b62;
+}    

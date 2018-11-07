@@ -1,22 +1,53 @@
+$(document).keypress(function(event){
+  console.log(event.which)
+});
+
+class saveObject {
+  constructor(){
+    this.score = 0;
+  }
+
+  get score(){
+    return this._score;
+  }
+
+  set score(newScore){
+    this._score = newScore;
+  }
+}
+const scoreObj = new saveObject();
+let score = scoreObj.score;
+
 function loadGame() {
   // Overwrite the function "loadGame" so it can't be executed again.
   loadGame = function () { }
 
   // Main variables
   let lives;
-  let score;
+  // let score;
   let paused;
   let started = false;
   let numOfWins = 1;
   let newBallSpeed = 0;
+  let dir;
   let brickWorth;
+  let scoreAtEnd;
+  const isAdmin = true; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
   const bricks = [];
   const keysPressed = {};
-  const initialPaddleSpeed = 500;
+  const initialPaddleSpeed = 600;
   const initialBallSpeed = 300;
-  const paddle = {};
+  const paddle = {};  
   const ball = {};
   let gameBorders = loadGameBorders();
+  const audio1 = new Audio("/sound/Sadmusic1.mp3");
+  const audio2 = new Audio("/sound/LIGHTS.mp3");
+  const audio3 = new Audio("/sound/wow.wav");
+  const audio4 = new Audio("/sound/SPLAT.mp3");
+  audio1.volume = 0;
+  audio2.volume = 0;
+  audio3.volume = 0;
+  audio4.volume = 0;
 
   let y = 0;
   let introtxt = 'Welcome to the game';
@@ -44,7 +75,7 @@ function loadGame() {
   // Reset starting variables etc
   function startNewGame() {
     lives = 3;
-    score = 0;
+    // score = 0;
 
     if (started === false) {
       paused = true;
@@ -78,6 +109,8 @@ function loadGame() {
   }
 
   function moveBall(deltaTime) {
+    
+    console.log(ball.direction.x);
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
 
@@ -118,6 +151,7 @@ function loadGame() {
       ball.direction.y *= -1;
     } else if (ball.top + ball.height > gameBorders.height) {
       loseLife();
+        audio1.play();
       return false;
     }
     return true;
@@ -128,8 +162,49 @@ function loadGame() {
       ball.direction.y *= -1;
       ball.top = paddle.top - ball.height;
       score += 5;
+      dir = whatZone();
+
+      if(dir === "left"){
+        ball.direction.x = -1;
+      }
+
+      else if(dir === "middleLeft"){
+        ball.direction.x = -0.5;
+      }
+
+      else if(dir === "middleRight"){
+        ball.direction.x = 0.5;
+      }
+
+      else if(dir === "right"){
+        ball.direction.x = 1;
+      }
+
+      else if(dir === "center"){
+        ball.direction.x = 0;
+      }
+      
+      //console.log(dir);
+
       updateInterface();
+      audio2.play();
     }
+  }
+
+  function whatZone(){
+    let paddleMiddleX = paddle.left + paddle.width/2;
+    let ballMiddleX = ball.left + ball.width/2;
+    // -1 the ball hits the paddle far left
+    // 1 the ball hits the padle far right
+    // 0 the ball hits the paddle in the middle
+    let relativePosition = (ballMiddleX - paddleMiddleX) / (paddle.width/2);
+    let zone = 'center';
+    if(relativePosition < -0.6){ zone = "left";}
+    else if(relativePosition > 0.6){ zone = "right";}
+    else if(relativePosition > -0.6 && relativePosition < -0.2){ zone = "middleLeft";}
+    else if(relativePosition < 0.6 && relativePosition > 0.2){ zone = "middleRight";}
+    console.log(relativePosition);
+    return zone;
   }
 
   function collisionDetectBallAndBricks() {
@@ -148,6 +223,7 @@ function loadGame() {
         bricks.splice(i, 1);
         //score += 20;
         updateInterface();
+        audio4.play();
       }
     }
     if (bricks.length == 0) {
@@ -182,17 +258,37 @@ function loadGame() {
     $('.lives span').text(lives);
     $('.main-text').hide();
     if (lives < 1) {
-      $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+      scoreAtEnd = score;
       numOfWins = 1;
       changeBallSpeed(numOfWins);
       initialPaddleSize();
+
+      $.getJSON('/json/highscoreonly.json', function(hiscorelist){
+        if(hiscorelist[9].score < scoreAtEnd){
+          // you are on the highscore list!!
+          $('#exampleModal').modal('toggle');
+          $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+          score = 0;
+        }
+      });
+
+      $.getJSON('/json/highscoreonly.json', function(hiscorelist){
+        if(hiscorelist[9].score > scoreAtEnd){
+          // you are on the highscore list!!
+          $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
+          score = 0;
+        }
+      });
+     
     } else if (!bricks.length) {
       $('.main-text').addClass("text-animation")
       $('.text-animation').text('YOU WON, PRESS ENTER FOR NEXT LEVEL');
 
+      audio3.play();
+
 
       if (keysPressed.enter) {
-        numOfWins++;
+        numOfWins += 0.3;
         smallPaddleSize();
         startNewGame();
         changeBallSpeed(numOfWins);
@@ -219,6 +315,7 @@ function loadGame() {
 
     if (lives > 0) {
       paused = !paused;
+      
     } else {
       startNewGame();
     }
@@ -230,6 +327,8 @@ function loadGame() {
       if (e.which === 37) { keysPressed.left = true; }
       if (e.which === 39) { keysPressed.right = true; }
       if (e.which === 13) { onEnterPress(); }
+      if (e.which === 67 && isAdmin) { bricks.splice(0,bricks.length); updateInterface(); } // Debug cheatcodes är admin är true
+      if (e.which === 77 && isAdmin) { score = 999999999999999 } // Debug cheatcodes är admin är true
     });
 
     $(window).keyup(function (e) {
@@ -277,13 +376,13 @@ function loadGame() {
   }
 
   function smallPaddleSize() {
-    $(".paddle").css("width", "100px");
-    paddle.width = 100;
+    $(".paddle").css("width", "10vw");
+    //paddle.width = 100;
   }
 
   function initialPaddleSize() {
-    $(".paddle").css("width", "200px");
-    paddle.width = 200;
+    $(".paddle").css("width", "13vw");
+    //paddle.width = 200;
   }
 
   function spawnBricks() {
@@ -368,7 +467,23 @@ function loadGame() {
     return css;
   }
 
-  function startInterval() {
+  // play Sound
+ /* function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }    
+}*/
+
+  function startInterval() {//game loop that runs evry 10 seconds
     const updateSpeed = 10; // lower = faster
     clearInterval(window.gameInterval);
     // Wait a short delay before starting to let the player prepare
@@ -381,4 +496,50 @@ function loadGame() {
       }, updateSpeed);
     }, 1000);
   }
+
+  $('#send-to-highscore').on('click', postNewHighscore);
+
+  function postNewHighscore() {
+    let name = $('#name').val(); // fetch the name from your <input>/or otherwhere
+    console.log(name);
+    let score = scoreAtEnd; // fetch the score from the game's "score"-variable
+    console.log(score);
+    $.post( "/add-score", { name, score }, function(responseData) {
+      //onsole.log('the new highscore-list is:', responseData);
+      let highscorelist = responseData;
+      //console.log(highscorelist);
+
+      let i = 0;
+      for (let highscore of highscorelist) {
+        $(`tr.${i} td.score`).empty().append(highscore.score);
+        $(`tr.${i} td.name`).empty().append(highscore.name);
+        //console.log(highscore);
+        i++;
+      }
+
+      //console.error('append/use the new highscore-list then remove this console.error');
+    });
+  }
+
+  $('.fa-volume-up').hide();
+
+$('.fa-volume-mute').click(function() {
+    $('.fa-volume-mute').hide();
+    $('.fa-volume-up').show();
+    audio1.volume = 0.2;  
+    audio2.volume = 0.4;  
+    audio3.volume = 0.2;  
+    audio4.volume = 0.2;
+})
+  
+$('.fa-volume-up').click(function() {
+  $('.fa-volume-up').hide();
+  $('.fa-volume-mute').show();
+  audio1.volume = 0;  
+  audio2.volume = 0;  
+  audio3.volume = 0;  
+  audio4.volume = 0;  
+})
+
 }
+

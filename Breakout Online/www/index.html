@@ -5,9 +5,10 @@
   <title>BreakOut Online</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/css/style.css">
-  <meta name="description" content="Breakout game, play breakout game online, arkanoid-online-game, ArcadeGame online, Breakout game history">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <meta name="description" content="A website dedicatied for the Breakout online game. A game in which you control a paddle you control a paddle to bounce a ball breaking a wall of bricks.">
   <meta name="keywords" content="Free Game, Breakout game, play breakout online, ArcadeGame, Breakout game history">
-  <meta name="author" content="Pontus Nilsson, Oliver Nilsson, Mirwais Nezami, Mikael Larsson, Pawelrz, Mohammed">
+  <meta name="author" content="Pontus Nilsson, Oliver Nilsson, Mirwais Nezami, Mikael Larsson, Pawel, Mohammed">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -18,8 +19,9 @@
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <img src="/images/englishflag.png" class="flagDesign flagPlacement flag britFlag">
-      <img src="/images/swedishflag.png" class="flagDesign flagPlacement flag sweFlag">
+      <img src="/images/englishflag.png" class="flagDesign flagPlacement flag britFlag" alt="English flag for language selection">
+      <img src="/images/swedishflag.png" class="flagDesign flagPlacement flag sweFlag" alt="Swedish flag for language selection">
+
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <!-- <div class="navbar-nav"> -->
         <!-- <a class="nav-item nav-link" href="/"> <span class="sr-only">(current)</span></a> -->
@@ -47,7 +49,7 @@
         <div class="row">
           <div class="col-lg-4">
             <section class="card bg-light text-center mb-5">
-              <img class="card-img-top" src="/images/google-link.png" alt="Card image cap">
+              <img class="card-img-top" src="/images/google-link.png" alt="Image representing Google's version of Breakout Online">
               <div class="card-body">
                 <h5 class="card-title">Google</h5>
                 <p class="card-text firstCard"></p>
@@ -57,7 +59,7 @@
           </div>
           <div class="col-lg-4">
             <section class="card bg-light text-center mb-5">
-              <img class="card-img-top" src="/images/cc-link.png" alt="Card image cap">
+              <img class="card-img-top" src="/images/cc-link.png" alt="Image of the game Outer space">
               <div class="card-body">
                 <h5 class="card-title">Outer Space</h5>
                 <p class="card-text secondCard"></p>
@@ -67,7 +69,7 @@
           </div>
           <div class="col-lg-4">
             <section class="card bg-light text-center mb-5">
-              <img class="card-img-top" src="/images/mit-link.png" alt="Card image cap">
+              <img class="card-img-top" src="/images/mit-link.png" alt="Image of the game BrickOut">
               <div class="card-body">
                 <h5 class="card-title">BrickOut</h5>
                 <p class="card-text thirdCard"></p>
@@ -94,14 +96,14 @@
           </article>
           <figure class="col-md-0 lg-4 md-0 order-first order-lg-last">
             <!-- img-fluid will make the image take the full width within the element it is placed in, in this case the <figure> element.-->
-            <img class="img-fluid" src="/images/old-breakout.jpg" alt="picture on old version of BreakoutGame">
+            <img class="img-fluid" src="/images/old-breakout.jpg" alt="Picture of an old version of BreakoutGame">
           </figure>
         </section>
         <!-- Added margin top and centered the image and text in accordance
             to the main container by addding mt-5(Increasing margin top) and justify-content-center(Placing the <figure> and <article> in the center of <main> element)-->
         <section class="row mt-3 justify-content-center">
           <figure class="col-md-0 lg-4  mt-5 order-first">
-            <img class="img-fluid" src="/images/NolanBushnell-SteveWozniak-and-SteveBristow-big.jpg" alt="pic on NolanBushnell-SteveWozniak-and-SteveBristow">
+            <img class="img-fluid" src="/images/NolanBushnell-SteveWozniak-and-SteveBristow-big.jpg" alt="Picture of Nolan Bushell, Steve Wozniak and SteveBristow.">
           </figure>
           <article class="col-lg-6 testSwe2">
             <h2>Spel skaparna</h2>
@@ -124,7 +126,7 @@
           <figure class="col-md-0 lg-4 order-first order-lg-last">
             <!-- img-fluid will make the image take the full width within the element it is placed in, in this case the <figure> element.-->
 
-            <img class="img-fluid" src="/images/new-breakout.jpg" alt="picture on new version of breakoutgame">
+            <img class="img-fluid" src="/images/new-breakout.jpg" alt="An image of a newer version of the Breakout online.">
 
           </figure>
       </div>
@@ -135,10 +137,35 @@
       <div class ="splash"></div>
       <div class ="intro"></div>
       <div class="score">SCORE: <span>00000</span></div>
-      <div class="lives">LIVES: <span>3</span></div>
+      <div class="lives">LIVES: <span>3</span><i class="fas fa-volume-mute"></i><i class="fas fa-volume-up"></i></div>
       <div class="ball"></div>
       <div class="paddle"></div>
       <div class="main-text"></div>
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Congratulations! You reach the highscore!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Write your name!</label>
+                  <input type="text" maxlength="8" class="form-control" id="name">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" id="send-to-highscore" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="high-score">
@@ -180,9 +207,9 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/js/main.js"></script>
   <script src="/js/historyPic.js"></script>
   <script src="/js/startPage.js"> </script>

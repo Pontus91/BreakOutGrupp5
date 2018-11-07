@@ -11,4 +11,38 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     margin-top: 10px;
+    -webkit-box-shadow: 0px 1px 50px 1px rgba(6, 6, 122, 0.75);
+    -moz-box-shadow: 0px 1px 50px 1px rgba(6, 6, 122, 0.75);
+    box-shadow: 0px 1px 50px 1px rgba(6, 6, 122, 0.75);
+}
+
+.table {
+  margin-left: 20%
+  //border-color: white;
+ // border: solid 1px;
+}
+
+@media screen and (max-width: 766px) {
+  .table {
+    margin-left: 21%;
+    
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .table {
+    margin-left: 18%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .table {
+    margin-left: 15%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .table {
+    margin-left: 14%;
+  }
 }

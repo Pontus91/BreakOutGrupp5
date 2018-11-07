@@ -33,14 +33,25 @@ function HighscoreTranslation(translation, language){
   let ranks = translation.rank;
   let i = 0;
   for(let rank of ranks[lang]){
-    let tr = $('<tr/>');
+    let tr = $('<tr/>').addClass(`${i}`);
     tr.append('<th scope="row">' + rank.text + '</th>');
     let highscores = translation.highscore;
-    tr.append('<td>' + highscores[i].score + '</td>');
-    tr.append('<td>' + highscores[i].name + '</td>');
+    tr.append('<td class="score"/>');
+    tr.append('<td class="name"/>');
     tbody.append(tr);
     i++;
   }
+  $.getJSON('/json/highscoreonly.json', function(data) {
+    let highscorelist = data;
+    let i = 0;
+    for (let highscore of highscorelist) {
+      $(`tr.${i} td.score`).empty().append(highscore.score);
+      $(`tr.${i} td.name`).empty().append(highscore.name);
+      //console.log(highscore);
+      i++;
+    }
+  });
+  
 }
 
 $('.sweFlag').click(function() {
