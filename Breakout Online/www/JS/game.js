@@ -99,18 +99,41 @@ function loadGame() {
     moveBall(deltaTime);
   }
 
+
+  let mouseWhere;
+  $(document).mousemove(function(e){
+
+    let width = $(window).width();
+    mouseWhere = e.pageX / width;
+    /*keysPressed.left = false;
+    keysPressed.right = false;
+    if(where < 0.5){ keysPressed.left = true }
+    else if (where > 0.6){ keysPressed.right = true; }*/
+
+   
+ });
+
+
   function movePaddle(deltaTime) {
+    
     const direction = calculatePaddleDirection();
     const velocity = direction * paddle.speed * deltaTime;
     paddle.left += velocity;
+
+    if(mouseWhere !== undefined){
+      paddle.left = (gameBorders.width - paddle.width) * mouseWhere;
+    }
+
     if (paddle.left < gameBorders.left) { paddle.left = 0; }// Switch directions if we go too far
     if (paddle.left + paddle.width > gameBorders.width) { paddle.left = gameBorders.width - paddle.width; }
     paddle.$.css('left', paddle.left);
+
+
   }
 
   function moveBall(deltaTime) {
 
-    console.log(ball.direction.x);
+    //console.log(ball.direction.x);
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
 
