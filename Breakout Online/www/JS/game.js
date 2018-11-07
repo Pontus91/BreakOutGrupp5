@@ -29,7 +29,7 @@ function loadGame() {
   let dir;
   let brickWorth;
   let scoreAtEnd;
-  const isAdmin = false; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
+  const isAdmin = true; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
   const bricks = [];
   const keysPressed = {};
   const initialPaddleSpeed = 600;
@@ -37,12 +37,14 @@ function loadGame() {
   const paddle = {};  
   const ball = {};
   let gameBorders = loadGameBorders();
-  const audio1 = new Audio("/sound/haha.mp3");
-  const audio2 = new Audio("/sound/PUNCH.mp3");
+  const audio1 = new Audio("/sound/Sadmusic1.mp3");
+  const audio2 = new Audio("/sound/LIGHTS.mp3");
   const audio3 = new Audio("/sound/wow.wav");
+  const audio4 = new Audio("/sound/SPLAT.mp3");
   audio1.volume = 0;
   audio2.volume = 0;
   audio3.volume = 0;
+  audio4.volume = 0;
 
   // Setup key listeners before starting the first game
   setupKeyListeners();
@@ -163,6 +165,7 @@ function loadGame() {
       //console.log(dir);
 
       updateInterface();
+      audio2.play();
     }
   }
 
@@ -198,7 +201,7 @@ function loadGame() {
         bricks.splice(i, 1);
         //score += 20;
         updateInterface();
-        audio2.play();
+        audio4.play();
       }
     }
     if (bricks.length == 0) {
@@ -443,7 +446,7 @@ function loadGame() {
   }
 
   // play Sound
-  function sound(src) {
+ /* function sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
@@ -456,7 +459,7 @@ function loadGame() {
     this.stop = function(){
         this.sound.pause();
     }    
-}
+}*/
 
   function startInterval() {//game loop that runs evry 10 seconds
     const updateSpeed = 10; // lower = faster
@@ -502,8 +505,9 @@ $('.fa-volume-mute').click(function() {
     $('.fa-volume-mute').hide();
     $('.fa-volume-up').show();
     audio1.volume = 0.2;  
-    audio2.volume = 0.2;  
+    audio2.volume = 0.4;  
     audio3.volume = 0.2;  
+    audio4.volume = 0.2;
 })
   
 $('.fa-volume-up').click(function() {
@@ -512,6 +516,7 @@ $('.fa-volume-up').click(function() {
   audio1.volume = 0;  
   audio2.volume = 0;  
   audio3.volume = 0;  
+  audio4.volume = 0;  
 })
 
 }
