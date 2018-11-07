@@ -164,20 +164,18 @@ $(document).on('click', ".activeLinks", function(e){
   });
 
 
-$('.buttonLeft').mousedown(function() {
-    console.log('bl down')
-    keysPressed.left = true;
-});
-
-$('.buttonLeft').mouseup(function() {
-    console.log('bl up')
+$('.buttonLeft')
+  .mouseup(function() {
     keysPressed.left = false;
-});
+  })
+  .mousedown(function() {
+    keysPressed.left = true;
+  });
 
-$('.buttonRight').mousedown(function() {
-    keysPressed.right = true;
-});
-
-$('.buttonRight').mouseup(function() {
+  $('.buttonRight')
+  .mouseup(function() {
     keysPressed.right = false;
-});
+  })
+  .mousedown(function() {
+    keysPressed.right = true;
+  });
