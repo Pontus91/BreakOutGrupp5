@@ -34,7 +34,7 @@ function loadGame() {
   let scoreAtEnd;
   const isAdmin = true; // Om admin är true kan man gå till nästa level direkt med ett knapptryck vilket är kodat nedanstående.
   const bricks = [];
-  const keysPressed = {};
+  window.keysPressed = {};
   const initialPaddleSpeed = 600;
   const initialBallSpeed = 300;
   const paddle = {};
@@ -124,6 +124,7 @@ function loadGame() {
 
   function calculatePaddleDirection() {
     let movementVelocity = 0;
+    console.log("pressed", keysPressed.left, keysPressed.right)
     if (keysPressed.left) { --movementVelocity; }//steer contorol of the paddle-left
     else if (keysPressed.right) { ++movementVelocity; }//steer contorol of the paddle-right
     return movementVelocity;

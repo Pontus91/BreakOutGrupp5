@@ -162,3 +162,22 @@ $(document).on('click', ".activeLinks", function(e){
     $("a").removeClass("active");
     $(this).addClass("active");
   });
+
+
+$('.buttonLeft').mousedown(function() {
+    console.log('bl down')
+    keysPressed.left = true;
+});
+
+$('.buttonLeft').mouseup(function() {
+    console.log('bl up')
+    keysPressed.left = false;
+});
+
+$('.buttonRight').mousedown(function() {
+    keysPressed.right = true;
+});
+
+$('.buttonRight').mouseup(function() {
+    keysPressed.right = false;
+});
