@@ -275,6 +275,7 @@ function loadGame() {
       $.getJSON('/json/highscoreonly.json', function(hiscorelist){
         if(hiscorelist[9].score > scoreAtEnd){
           // you are on the highscore list!!
+          $('#loseModal').modal('toggle');
           $('.main-text').text('GAME OVER - PRESS ENTER TO PLAY AGAIN');
           score = 0;
         }
