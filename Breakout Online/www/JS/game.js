@@ -1,5 +1,5 @@
 $(document).keypress(function (event) {
-  console.log(event.which)
+
 });
 
 class saveObject {
@@ -110,7 +110,7 @@ function loadGame() {
 
   function moveBall(deltaTime) {
 
-    console.log(ball.direction.x);
+
     ball.left += ball.direction.x * ball.speed * deltaTime;
     ball.top += ball.direction.y * ball.speed * deltaTime;
 
@@ -186,7 +186,7 @@ function loadGame() {
         ball.direction.x = 0;
       }
 
-      //console.log(dir);
+
 
       updateInterface();
 
@@ -207,7 +207,6 @@ function loadGame() {
     else if (relativePosition > 0.6) { zone = "right"; }
     else if (relativePosition > -0.6 && relativePosition < -0.2) { zone = "middleLeft"; }
     else if (relativePosition < 0.6 && relativePosition > 0.2) { zone = "middleRight"; }
-    console.log(relativePosition);
     return zone;
   }
 
@@ -290,7 +289,7 @@ function loadGame() {
     } else if (!bricks.length) {
       $('.main-text').addClass("text-animation")
       $('.text-animation').text('YOU WON, PRESS ENTER FOR NEXT LEVEL');
-      
+
       // Sound when you win the lavel
       audio3.play();
 
@@ -300,7 +299,6 @@ function loadGame() {
         smallPaddleSize();
         startNewGame();
         changeBallSpeed(numOfWins);
-        console.log(numOfWins);
       }
     } else if (paused && !started) {
       $('.main-text').removeClass("text-animation");
@@ -475,22 +473,6 @@ function loadGame() {
     return css;
   }
 
-  // play Sound
-  /* function sound(src) {
-     this.sound = document.createElement("audio");
-     this.sound.src = src;
-     this.sound.setAttribute("preload", "auto");
-     this.sound.setAttribute("controls", "none");
-     this.sound.style.display = "none";
-     document.body.appendChild(this.sound);
-     this.play = function(){
-         this.sound.play();
-     }
-     this.stop = function(){
-         this.sound.pause();
-     }    
- }*/
-
   function startInterval() {//game loop that runs evry 10 seconds
     const updateSpeed = 10; // lower = faster
     clearInterval(window.gameInterval);
@@ -509,23 +491,21 @@ function loadGame() {
 
   function postNewHighscore() {
     let name = $('#name').val(); // fetch the name from your <input>/or otherwhere
-    console.log(name);
+
     let score = scoreAtEnd; // fetch the score from the game's "score"-variable
-    console.log(score);
+
     $.post("/add-score", { name, score }, function (responseData) {
       //onsole.log('the new highscore-list is:', responseData);
       let highscorelist = responseData;
-      //console.log(highscorelist);
+
 
       let i = 0;
       for (let highscore of highscorelist) {
         $(`tr.${i} td.score`).empty().append(highscore.score);
         $(`tr.${i} td.name`).empty().append(highscore.name);
-        //console.log(highscore);
+
         i++;
       }
-
-      //console.error('append/use the new highscore-list then remove this console.error');
     });
   }
 

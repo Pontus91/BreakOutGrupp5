@@ -10,8 +10,8 @@ function start(translations) {
     let inSwe = 1;
     let inEng = 1;
     let ulSwe = $('<ul/>');
-  let ulEng = $('<ul/>');
-    console.log('Now we have JSON');
+    let ulEng = $('<ul/>');
+
     // please note when
     // writing tags with jQuery
     // we create new HTML elements
@@ -19,14 +19,14 @@ function start(translations) {
     // as a jQuery objekt)
 
     //prints swedish translation
-        for (let transl of translations.sv) {
-            let pSwe = $('<p/>');
-            // append - add something
-            // last inside me
-            pSwe.append(transl.text);
-            $('.testSwe' + inSwe).append(pSwe);
-            inSwe++;
-        }
+    for (let transl of translations.sv) {
+        let pSwe = $('<p/>');
+        // append - add something
+        // last inside me
+        pSwe.append(transl.text);
+        $('.testSwe' + inSwe).append(pSwe);
+        inSwe++;
+    }
 
     //prints english translation
     for (let transl of translations.en) {
@@ -48,27 +48,27 @@ function start(translations) {
 let langSwitch = false;
 
 $('.flag').click(function () {
-  if (!langSwitch) {
-    $('.testSwe1').hide();
-    $('.testEng1').show();
-    $('.testSwe2').hide();
-    $('.testEng2').show();
-    $('.testSwe3').hide();
-    $('.testEng3').show();
-    $('.britFlag').hide();
-    $('.sweFlag').show();
-  }
-  else if (langSwitch) {
-    $('.testEng1').hide();
-    $('.testSwe1').show();
-    $('.testEng2').hide();
-    $('.testSwe2').show();
-    $('.testEng3').hide();
-    $('.testSwe3').show();
-    $('.sweFlag').hide();
-    $('.britFlag').show();
-  }
-  langSwitch = !langSwitch;
+    if (!langSwitch) {
+        $('.testSwe1').hide();
+        $('.testEng1').show();
+        $('.testSwe2').hide();
+        $('.testEng2').show();
+        $('.testSwe3').hide();
+        $('.testEng3').show();
+        $('.britFlag').hide();
+        $('.sweFlag').show();
+    }
+    else if (langSwitch) {
+        $('.testEng1').hide();
+        $('.testSwe1').show();
+        $('.testEng2').hide();
+        $('.testSwe2').show();
+        $('.testEng3').hide();
+        $('.testSwe3').show();
+        $('.sweFlag').hide();
+        $('.britFlag').show();
+    }
+    langSwitch = !langSwitch;
 });
 
 // Ask jQuery to load some json data
@@ -76,15 +76,15 @@ $('.flag').click(function () {
 $.getJSON('/json/translations.json', start);
 // This will be displayed first
 // because the JSON isn't loaded instantly
-console.log('No JSON yet');
-  // When the JSON has loaded we will see
-  // the console.log inisde the function start
+
+// When the JSON has loaded we will see
+
 
 //Changes the language from swedish to english when the british flag is pressed
-$(document).ready(function() {
+$(document).ready(function () {
     let navJSON;
 
-    const createNavLink = function(href, text) {
+    const createNavLink = function (href, text) {
         const a = document.createElement('a');
 
         a.setAttribute('href', href);
@@ -94,22 +94,22 @@ $(document).ready(function() {
         return a;
     }
 
-    const createNavLinkWrapper = function() {
+    const createNavLinkWrapper = function () {
         const navWrapper = document.createElement('div');
         navWrapper.setAttribute('class', 'navbar-nav');
 
         return navWrapper;
     }
 
-    const createNav = function(jsonData, lang) {
-        const links = jsonData['nav'+lang].map((navVal) => {
+    const createNav = function (jsonData, lang) {
+        const links = jsonData['nav' + lang].map((navVal) => {
             return createNavLink(navVal.href, navVal.nav);
         });
 
         links.splice(2, 0, createLogo());
 
         const linkWrapper = createNavLinkWrapper();
-        
+
         links.forEach(element => {
             linkWrapper.append(element);
         });
@@ -117,7 +117,7 @@ $(document).ready(function() {
         return linkWrapper;
     };
 
-    const createLogo = function() {
+    const createLogo = function () {
         const a = document.createElement('a');
         const img = document.createElement('img');
 
@@ -130,52 +130,52 @@ $(document).ready(function() {
         return a;
     }
 
-    const insertHeaderToDom = function(lang) {
+    const insertHeaderToDom = function (lang) {
         const links = createNav(navJSON, lang);
         document.getElementById('navbarNavAltMarkup').append(links);
     }
 
-    const initHeader = function() {
-        $.getJSON('/json/navbartranslation.json', function(data) {
+    const initHeader = function () {
+        $.getJSON('/json/navbartranslation.json', function (data) {
             navJSON = data;
             insertHeaderToDom('sv');
         })
     }
 
-    const changeLanguage = function(lang) {
+    const changeLanguage = function (lang) {
         $('.navbar-nav').remove();
         insertHeaderToDom(lang);
     }
 
-    $('.britFlag').click(function(){
+    $('.britFlag').click(function () {
         changeLanguage('en');
     });
 
-    $('.sweFlag').click(function(){
+    $('.sweFlag').click(function () {
         changeLanguage('sv');
     })
 
     initHeader();
 });
 
-$(document).on('click', ".activeLinks", function(e){
+$(document).on('click', ".activeLinks", function (e) {
     $("a").removeClass("active");
     $(this).addClass("active");
-  });
+});
 
 
 $('.buttonLeft')
-  .mouseup(function() {
-    keysPressed.left = false;
-  })
-  .mousedown(function() {
-    keysPressed.left = true;
-  });
+    .mouseup(function () {
+        keysPressed.left = false;
+    })
+    .mousedown(function () {
+        keysPressed.left = true;
+    });
 
-  $('.buttonRight')
-  .mouseup(function() {
-    keysPressed.right = false;
-  })
-  .mousedown(function() {
-    keysPressed.right = true;
-  });
+$('.buttonRight')
+    .mouseup(function () {
+        keysPressed.right = false;
+    })
+    .mousedown(function () {
+        keysPressed.right = true;
+    });
