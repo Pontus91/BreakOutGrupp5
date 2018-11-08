@@ -108,10 +108,11 @@
 }
 
 .intro {
-  top: 300px;
-  left: 170px;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%); 
   font-size: 50px;
-  position: absolute;
   font-family: 'Chakra Petch', sans-serif;
   color: white;
   z-index: 10;
