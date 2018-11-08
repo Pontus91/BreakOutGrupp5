@@ -1,9 +1,9 @@
-$(document).ready(function() {
-    $.getJSON('/json/footerTranslation.json', function(data) {
-        $.each(data.footerCardEng, function() {
-            $('.kontaktText').append("<p>"+this['firstFooterEngText']+"<p/>");
-            $('.telefonText').append("<p>"+this['secondFooterEngText']+"<p/>");
-            $('.emailText').append("<p>"+this['thirdFooterEngText']+"<p/>");
+$(document).ready(function () {
+    $.getJSON('/json/footerTranslation.json', function (data) {
+        $.each(data.footerCardEng, function () {
+            $('.kontaktText').append("<p>" + this['firstFooterEngText'] + "<p/>");
+            $('.telefonText').append("<p>" + this['secondFooterEngText'] + "<p/>");
+            $('.emailText').append("<p>" + this['thirdFooterEngText'] + "<p/>");
             $('.kontaktText p').addClass('engFooterText');
             $('.telefonText p').addClass('engPhoneText');
             $('.emailText p').addClass('engEmailText');
@@ -11,17 +11,17 @@ $(document).ready(function() {
             $('.engPhoneText').hide()
             $('.engEmailText').hide()
 
-            
+
         })
     })
 })
 
-$(document).ready(function() {
-    $.getJSON('/json/footerTranslation.json', function(data) {
-        $.each(data.footerCardSv, function() {
-            $('.kontaktText').append("<p>"+this['firstFooterSweText']+"<p/>");
-            $('.telefonText').append("<p>"+this['secondFooterSweText']+"<p/>");
-            $('.emailText').append("<p>"+this['thirdFooterSweText']+"<p/>");
+$(document).ready(function () {
+    $.getJSON('/json/footerTranslation.json', function (data) {
+        $.each(data.footerCardSv, function () {
+            $('.kontaktText').append("<p>" + this['firstFooterSweText'] + "<p/>");
+            $('.telefonText').append("<p>" + this['secondFooterSweText'] + "<p/>");
+            $('.emailText').append("<p>" + this['thirdFooterSweText'] + "<p/>");
             $('.kontaktText p').addClass('sweFooterText');
             $('.telefonText p').addClass('swePhoneText');
             $('.emailText p').addClass('sweEmailText');
@@ -30,7 +30,7 @@ $(document).ready(function() {
 })
 
 
-$('.britFlag').click(function() {
+$('.britFlag').click(function () {
     $('.sweFooterText').hide()
     $('.swePhoneText').hide()
     $('.sweEmailText').hide()
@@ -39,7 +39,7 @@ $('.britFlag').click(function() {
     $('.engEmailText').show()
 })
 
-$('.sweFlag').click(function() {
+$('.sweFlag').click(function () {
     $('.engFooterText').hide()
     $('.engPhoneText').hide()
     $('.engEmailText').hide()
